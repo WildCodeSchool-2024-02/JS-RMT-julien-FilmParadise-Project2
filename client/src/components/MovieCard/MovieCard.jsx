@@ -1,11 +1,16 @@
 import "./movie-card.css";
+import { Link } from "react-router-dom";
 
 function MovieCard({ movie }) {
   return (
     <div className="movie-card">
-      <a href="http://localhost:3000/movies/:title">
-        <img src={movie.poster_path} alt={movie.original_title} />
-      </a>
+      <Link to={`http://localhost:3000/movies/${movie.id}`}>
+        <img
+          src={movie.poster_path}
+          alt={movie.original_title}
+          title={movie.original_title}
+        />
+      </Link>
     </div>
   );
 }
