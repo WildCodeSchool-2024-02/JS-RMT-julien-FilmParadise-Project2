@@ -5,7 +5,7 @@ import MovieCard from "../components/MovieCard/MovieCard";
 function AllMovies() {
   const movies = useLoaderData();
   return (
-    <section>
+    <section className="movie-list">
       {movies.map((movie) => (
         <MovieCard key={movie.id} movie={movie} />
       ))}
