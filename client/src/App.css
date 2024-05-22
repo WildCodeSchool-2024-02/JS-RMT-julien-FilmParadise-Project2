@@ -1,5 +1,19 @@
+@font-face {
+  font-family: "Philosopher-Regular";
+  src: url("./assets/fonts/Philosopher-Regular.ttf");
+}
+@font-face {
+  font-family: "Righteous-Regular";
+  src: url("./assets/fonts/Righteous-Regular.ttf");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  --main-color: #e09f3e;
+  --text-color: #fbf8f8;
+  --caroussel-color: #177ea1;
+  --main-radius: 8px;
+  --text-font: "Philosopher-Regular";
+  --title-font: "Righteous-Regular";
 }
