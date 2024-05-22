@@ -17,3 +17,7 @@
   --text-font: "Philosopher-Regular";
   --title-font: "Righteous-Regular";
 }
+
+h2 {
+  font-family: var(--title-font);
+}

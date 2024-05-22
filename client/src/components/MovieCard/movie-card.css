@@ -1,8 +1,13 @@
 .movie-list {
+  margin: 2rem 0;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
   .movie-card {
     img {
       width: 15rem;
