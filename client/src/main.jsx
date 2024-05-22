@@ -18,8 +18,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/movies/:title",
-    element: <MovieDetail />
-  }
+    element: <MovieDetail />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
