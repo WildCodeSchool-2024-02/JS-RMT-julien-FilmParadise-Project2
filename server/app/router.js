@@ -7,16 +7,27 @@ const router = express.Router();
 /* ************************************************************************* */
 
 // Import itemActions module for handling item-related operations
-const itemActions = require("./controllers/itemActions");
+const movies = require("../database/data");
 
 // Route to get a list of items
-router.get("/items", itemActions.browse);
+router.get("/movies", (req, res) => {
+  res.status(200).json(movies);
+});
 
 // Route to get a specific item by ID
-router.get("/items/:id", itemActions.read);
+router.get("/movies/:id", (req, res) => {
+  const wantedId = parseInt(req.params.id, 10);
+  const movie = movies.find((element) => element.id === wantedId);
+
+  if (movie) {
+    res.status(200).json(movie);
+  } else {
+    res.status(404).json({ message: "Movie not found" });
+  }
+});
 
 // Route to add a new item
-router.post("/items", itemActions.add);
+// router.post("/items", movies.add);
 
 /* ************************************************************************* */
 
