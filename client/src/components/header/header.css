@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     .logo {
-      height: 40px;
+      height: 90px;
       margin-right: 10px;
     }
     .title-section {
@@ -21,6 +21,7 @@
       .subtitle {
         margin: 0;
         font-size: 1rem;
+        font-family: "Righteous-Regular";
       }
     }
   }
