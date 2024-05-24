@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import MovieDetail from "./pages/MovieDetail";
 import AllMovies from "./pages/AllMovies";
-import Cart from "./components/cart/Cart";
+import Cart from "./pages/Cart";
 
 const router = createBrowserRouter([
   {
