@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import './header.css';
-import logo from "../../assets/images/Logo.png"
+import logo from '../../assets/images/Logo.png';
 
 function Header() {
   return (
@@ -12,8 +13,8 @@ function Header() {
         </div>
       </div>
       <div className="action-buttons">
-        <button type='button' className="favorites-button">Favoris</button>
-        <button type='button' className="cart-button">Panier</button>
+        <Link to="/favorites" className="favorites-button">Favoris</Link>
+        <Link to="/cart" className="cart-button">Panier</Link>
       </div>
     </header>
   );
