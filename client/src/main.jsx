@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     element: <MovieDetail />,
     loader: async ({ params }) => {
       const response = await axios.get(
-        `http://localhost:3310/api/movies/${params.title}`
+        `${import.meta.env.VITE_API_URL}/api/movies/${params.title}`
       );
 
       return response.data;

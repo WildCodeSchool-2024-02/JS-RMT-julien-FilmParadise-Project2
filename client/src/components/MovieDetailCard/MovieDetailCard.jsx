@@ -13,20 +13,26 @@ function MovieDetailCard() {
   ];
 
   return (
-    <section className="MovieDetail-container">
-      <img
-        className="MovieDetail-card"
-        src={movie.poster_path}
-        alt="poster du film"
-      />
+    <section className="movie-detail-container">
+      {movie.title === "Movie not found" ? (
+        <p>Votre film n'existe pas</p>
+      ) : (
+        <>
+          <img
+            className="movie-detail-card"
+            src={movie.poster_path}
+            alt="poster du film"
+          />
 
-      <div className="MovieDetail-info">
-        <h1 className="MovieDetail-subcard">{movie.title}</h1>
+          <div className="movie-detail-info">
+            <h1 className="movie-detail-subcard">{movie.title}</h1>
 
-        {dataDetails.map((detail) => (
-          <Details detail={detail} key={detail} />
-        ))}
-      </div>
+            {dataDetails.map((detail) => (
+              <Details detail={detail} key={detail} />
+            ))}
+          </div>
+        </>
+      )}
     </section>
   );
 }

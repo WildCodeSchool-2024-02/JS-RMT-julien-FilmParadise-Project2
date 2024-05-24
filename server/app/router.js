@@ -22,7 +22,7 @@ router.get("/movies/:title", (req, res) => {
   if (movie) {
     res.status(200).json(movie);
   } else {
-    res.status(404).json({ message: "Movie not found" });
+    res.status(200).json({ title: "Movie not found" });
   }
 });
 

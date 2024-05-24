@@ -1,9 +1,9 @@
-.MovieDetail-container {
+.movie-detail-container {
   display: flex;
   align-items: flex-start;
   margin-top: 50px;
   justify-content: center;
-  .MovieDetail-card {
+  .movie-detail-card {
     width: 350px;
     margin-right: 20px;
     border: 1px solid white;
@@ -17,12 +17,12 @@
       height: auto;
     }
   }
-  .MovieDetail-info {
+  .movie-detail-info {
     display: flex;
     flex-direction: column;
     width: 350px;
     font-family: var(--text-font, sans-serif);
-    .MovieDetail-subcard {
+    .movie-detail-subcard {
       border: 1px solid white;
       border-radius: var(--main-radius);
       box-shadow: 0px 1px 7px rgb(250, 248, 248);
