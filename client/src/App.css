@@ -23,3 +23,12 @@
 h2 {
   font-family: var(--title-font);
 }
+
+a {
+  text-decoration: none;
+}
+
+.box {
+  box-shadow: 8px 10px 15px 5px rgba(66, 66, 66, 0.61);
+  border-radius: var(--main-radius);
+}

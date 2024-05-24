@@ -17,7 +17,9 @@ const router = createBrowserRouter([
     path: "/movies",
     element: <AllMovies />,
     loader: () =>
-      axios.get("http://localhost:3310/api/movies").then((res) => res.data),
+      axios
+        .get(`${import.meta.env.VITE_API_URL}/api/movies`)
+        .then((res) => res.data),
   },
   {
     path: "/movies/:title",

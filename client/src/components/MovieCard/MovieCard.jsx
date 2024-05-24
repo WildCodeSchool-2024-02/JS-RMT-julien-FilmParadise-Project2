@@ -1,10 +1,10 @@
-import "./movie-card.css";
 import { Link } from "react-router-dom";
+import "./movie-card.css";
 
 function MovieCard({ movie }) {
   return (
-    <div className="movie-card">
-      <Link to={`http://localhost:3000/movies/${movie.title}`}>
+    <div className="movie-card box">
+      <Link to={`/movies/${movie.title}`}>
         <div>
           <img
             src={movie.poster_path}
