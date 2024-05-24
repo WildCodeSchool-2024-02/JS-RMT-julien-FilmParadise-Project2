@@ -1,0 +1,49 @@
+.movie-list {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  h2 {
+    width: 100%;
+    text-align: center;
+  }
+  .movie-card {
+    a {
+      color: black;
+    }
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      border-radius: var(--main-radius);
+      position: relative;
+      background-color: aqua;
+      img {
+        width: 16rem;
+        height: 22rem;
+        border-radius: var(--main-radius);
+      }
+      p {
+        display: none;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.9);
+        font-family: var(--title-font);
+        width: 100%;
+        height: 3rem;
+        text-align: center;
+        border-radius: 0 0 8px 8px / 0 0 8px 8px;
+      }
+    }
+    div:hover {
+      outline: 3px solid var(--main-color);
+      opacity: 0.8;
+      box-shadow: 8px 10px 15px 5px rgba(255, 255, 255, 0.61);
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
