@@ -1,26 +1,9 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
+import { useLoaderData } from "react-router-dom";
 import "./MovieDetail.css";
 import Details from "./Details";
 
 function MovieDetailCard() {
-  const { title } = useParams();
-  const [movie, setMovie] = useState(null);
-  useEffect(() => {
-    axios
-      .get(`http://localhost:3310/api/movies/${title}`)
-      .then((response) => {
-        setMovie(response.data);
-      })
-      .catch((error) => {
-        console.error("There was an error fetching the movie details!", error);
-      });
-  }, [title]);
-
-  if (!movie) {
-    return <div>Loading...</div>;
-  }
+  const movie = useLoaderData();
 
   const dataDetails = [
     `Release Date : ${movie.release_date}`,
