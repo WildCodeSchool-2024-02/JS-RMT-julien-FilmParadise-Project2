@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "./MovieDetail.css";
+import Details from "./Details";
 
 function MovieDetailCard() {
   const { title } = useParams();
@@ -21,37 +22,29 @@ function MovieDetailCard() {
     return <div>Loading...</div>;
   }
 
+  const dataDetails = [
+    `Release Date : ${movie.release_date}`,
+    `Synopsis : ${movie.overview}`,
+    `Genre : ${movie.genre_ids}`,
+    `Price : ${movie.price}€`,
+  ];
+
   return (
-    <div className="MovieDetail-container">
-      <div className="MovieDetail-card">
-        <img src={movie.poster_path} alt="poster du film" />
-      </div>
+    <section className="MovieDetail-container">
+      <img
+        className="MovieDetail-card"
+        src={movie.poster_path}
+        alt="poster du film"
+      />
+
       <div className="MovieDetail-info">
-        <div className="MovieDetail-subcard">
-          <h1>{movie.title}</h1>
-        </div>
-        <div className="MovieDetail-subcard">
-          <p>
-            <strong>Release Date :</strong> {movie.release_date}
-          </p>
-        </div>
-        <div className="MovieDetail-subcard">
-          <p>
-            <strong>Synopsis :</strong> {movie.overview}
-          </p>
-        </div>
-        <div className="MovieDetail-subcard">
-          <p>
-            <strong>Genre :</strong> {movie.genre_ids}
-          </p>
-        </div>
-        <div className="MovieDetail-subcard">
-          <p>
-            <strong>Price :</strong> {movie.price}€
-          </p>
-        </div>
+        <h1 className="MovieDetail-subcard">{movie.title}</h1>
+
+        {dataDetails.map((detail) => (
+          <Details detail={detail} key={detail} />
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 
