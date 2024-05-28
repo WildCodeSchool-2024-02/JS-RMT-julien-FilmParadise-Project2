@@ -1,7 +1,15 @@
+import { useLoaderData } from "react-router-dom";
+
+import MovieCard from "../components/MovieCard/MovieCard";
+
 function AllMovies() {
+  const movies = useLoaderData();
   return (
-    <section>
-      <h1>Page tous les films</h1>
+    <section className="movie-list">
+      <h2>All movies :</h2>
+      {movies.map((movie) => (
+        <MovieCard key={movie.id} movie={movie} />
+      ))}
     </section>
   );
 }
