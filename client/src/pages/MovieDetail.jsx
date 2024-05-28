@@ -1,7 +1,10 @@
+import { useLoaderData } from "react-router-dom";
+
 import MovieDetailCard from "../components/MovieDetailCard/MovieDetailCard";
 
 function MovieDetail() {
-  return <MovieDetailCard />;
+  const movie = useLoaderData();
+  return <MovieDetailCard movie={movie} />;
 }
 
 export default MovieDetail;

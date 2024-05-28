@@ -1,10 +1,7 @@
-import { useLoaderData } from "react-router-dom";
 import Details from "./Details";
 import "./MovieDetail.css";
 
-function MovieDetailCard() {
-  const movie = useLoaderData();
-
+function MovieDetailCard({ movie }) {
   const dataDetails = [
     `Release Date : ${movie.release_date}`,
     `Synopsis : ${movie.overview}`,
