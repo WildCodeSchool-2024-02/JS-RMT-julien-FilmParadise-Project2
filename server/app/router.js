@@ -8,11 +8,10 @@ const movies = require("../database/data");
 // Define Your API Routes Here
 /* ************************************************************************* */
 
-// Import itemActions module for handling item-related operations
-
+const movies = require("../database/data");
 // Route to get a list of items
 router.get("/movies", (req, res) => {
-  res.send("hello world");
+  res.status(200).json(movies);
 });
 
 router.get("/movies/:title", (req, res) => {
