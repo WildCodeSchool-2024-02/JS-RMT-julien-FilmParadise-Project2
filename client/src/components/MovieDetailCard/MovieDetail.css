@@ -3,6 +3,7 @@
   align-items: flex-start;
   margin-top: 50px;
   justify-content: center;
+  flex-wrap: wrap;
   .movie-detail-card {
     width: 350px;
     margin-right: 20px;
@@ -30,6 +31,28 @@
       color: var(--text-color);
       padding: 10px;
       margin-bottom: 10px;
+      transition: border 0.3s ease;
     }
+  }
+  .movie-detail-subcard:hover {
+    border: 1px solid blue;
+  }
+}
+
+@media (max-width: 768px) {
+  .movie-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      margin-left: 20px;
+    }
+  }
+
+  .movie-detail-card,
+  .movie-detail-info {
+    width: 90%;
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }

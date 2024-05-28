@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
-import "./MovieDetail.css";
 import Details from "./Details";
+import "./MovieDetail.css";
 
 function MovieDetailCard() {
   const movie = useLoaderData();
@@ -10,6 +10,7 @@ function MovieDetailCard() {
     `Synopsis : ${movie.overview}`,
     `Genre : ${movie.genre_ids}`,
     `Price : ${movie.price}€`,
+    `Notes : ${movie.vote_average}/10 (Nb de votes : ${movie.vote_count} )`,
   ];
 
   return (
