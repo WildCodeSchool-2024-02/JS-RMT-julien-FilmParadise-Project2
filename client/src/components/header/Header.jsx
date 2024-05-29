@@ -12,10 +12,10 @@ function Header() {
           <p className="subtitle">"Le ciné dans ton canapé"</p>
         </div>
       </section>
-      <section className="action-buttons">
+      <nav className="action-buttons">
         <Link to="/favorites" className="favorites-button">Favoris</Link>
         <Link to="/cart" className="cart-button">Panier</Link>
-      </section>
+      </nav>
     </header>
   );
 }
