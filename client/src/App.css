@@ -19,11 +19,12 @@
   --text-font: "Philosopher-Regular";
   --title-font: "Righteous-Regular";
 }
-body {
-  background-image: url(https://img.freepik.com/photos-gratuite/rendu-3d-arriere-plan-moderne-cyber-particules-fluides_1048-14716.jpg?t=st=1716972191~exp=1716975791~hmac=1107f2582e98460bc6a9d571d468b62d8d6401c236eb4ba98d264cdaae2fcc8b&w=1480);
+.background {
+  background-image: url(../src/assets/images/background.avif);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  height: 100%;
 }
 
 h2 {
