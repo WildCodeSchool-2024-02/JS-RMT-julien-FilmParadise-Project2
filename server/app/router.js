@@ -12,6 +12,17 @@ router.get("/movies", (req, res) => {
   res.status(200).json(movies);
 });
 
+router.get("/movies/:title", (req, res) => {
+  const wantedTitle = req.params.title;
+  const movie = movies.find((element) => element.title === wantedTitle);
+
+  if (movie) {
+    res.status(200).json(movie);
+  } else {
+    res.status(200).json({ title: "Movie not found" });
+  }
+});
+
 // Route to get a specific item by ID
 
 /* ************************************************************************* */

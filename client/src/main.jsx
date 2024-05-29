@@ -25,6 +25,13 @@ const router = createBrowserRouter([
   {
     path: "/movies/:title",
     element: <MovieDetail />,
+    loader: async ({ params }) => {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/movies/${params.title}`
+      );
+
+      return response.data;
+    },
   },
   {
     path: "/cart",

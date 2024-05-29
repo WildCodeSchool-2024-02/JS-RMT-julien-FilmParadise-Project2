@@ -1,13 +1,10 @@
+import { useLoaderData } from "react-router-dom";
 
+import MovieDetailCard from "../components/MovieDetailCard/MovieDetailCard";
 
 function MovieDetail() {
-  
-
-  return (
-    <section>
-      <h1>page détail d'un film</h1>
-    </section>
-  )
-};
+  const movie = useLoaderData();
+  return <MovieDetailCard movie={movie} />;
+}
 
 export default MovieDetail;
