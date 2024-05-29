@@ -7,7 +7,6 @@ function Header() {
     <header className="header">
       <section className="logo-section">
         <Link to="/movies">
-          {" "}
           <img src={logo} alt="Logo" className="logo" />
         </Link>
         <div className="title-section">
