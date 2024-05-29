@@ -44,6 +44,7 @@
       margin: 5;
       font-size: 1rem;
       font-family: "Righteous-Regular";
+      font-style: oblique;
     }
   }
 }
@@ -53,6 +54,7 @@
   gap: 40px;
   padding: 20px;
   a {
+    font-family: var(--text-font);
     padding: 5px 10px;
     border: none;
     border-radius: 4px;
