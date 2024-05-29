@@ -7,6 +7,7 @@ import { MovieProvider } from "./context/MovieContext";
 import App from "./App";
 import MovieDetail from "./pages/MovieDetail";
 import AllMovies from "./pages/AllMovies";
+import Cart from "./pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/movies/:title",
     element: <MovieDetail />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
   },
 ]);
 
