@@ -4,7 +4,7 @@ import logo from "../../assets/images/Logo.png";
 
 function Header() {
   return (
-    <header className="header">
+    <header className="header background">
       <section className="logo-section">
         <Link to="/movies">
           <img src={logo} alt="Logo" className="logo" />

@@ -19,11 +19,12 @@
   --text-font: "Philosopher-Regular";
   --title-font: "Righteous-Regular";
 }
-body {
+.background {
   background-image: url(../src/assets/images/background.avif);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  height: 100%;
 }
 
 h2 {
