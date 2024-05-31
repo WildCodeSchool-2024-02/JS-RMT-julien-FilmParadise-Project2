@@ -1,20 +1,20 @@
 import { createContext, useState, useContext } from "react";
 
-const MovieContext = createContext();
+const CartContext = createContext();
 
-export function MovieProvider({ children }) {
-  const [movie, setMovie] = useState();
+export function CartProvider({ children }) {
+  const [cart, setCart] = useState([]);
 
+  const addToCart = (movie) => {
+    if (!cart.some((item) => item.id === movie.id)) {
+      setCart((prev) => [...prev, movie]);
+    }
+  };
   return (
-    <MovieContext.Provider
-      value={{
-        movie,
-        setMovie,
-      }}
-    >
+    <CartContext.Provider value={{ cart, addToCart }}>
       {children}
-    </MovieContext.Provider>
+    </CartContext.Provider>
   );
 }
 
-export const useMovie = () => useContext(MovieContext);
+export const useCart = () => useContext(CartContext);

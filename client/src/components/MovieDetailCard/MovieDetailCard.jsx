@@ -1,4 +1,6 @@
 import Details from "./Details";
+import ButtonCart from "../AddToCart/ButtonCart";
+
 import "./MovieDetail.css";
 
 function MovieDetailCard({ movie }) {
@@ -28,6 +30,7 @@ function MovieDetailCard({ movie }) {
             {dataDetails.map((detail) => (
               <Details detail={detail} key={detail} />
             ))}
+            <ButtonCart movie={movie} />
           </div>
         </>
       )}
