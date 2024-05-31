@@ -26,4 +26,17 @@
 .formulaire label {
   color: var(--text-color);
   font-family: var(--text-font);
+  text-align: center;
+  padding: 2px;
+}
+.formulaire input {
+  background-color: rgba(68, 60, 154, 0.55);
+  border-radius: 4px;
+}
+
+.formulaire button {
+  background-color: var(--main-color);
+  font-family: var(--text-font);
+  padding: 5px 10px;
+  border-radius: 4px;
 }
