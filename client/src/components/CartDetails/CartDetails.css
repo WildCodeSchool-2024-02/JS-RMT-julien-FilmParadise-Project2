@@ -28,18 +28,16 @@
 }
 
 .title-cart {
-  padding: 2rem 2rem 0 2rem;
-  font-size: 2rem;
+  margin: 2rem;
 }
 .adjust-total-css {
   width: 70%;
   display: flex;
   justify-content: end;
   margin-left: 2rem;
+  margin-bottom: 2rem;
   .total-price {
     background-color: rgba(150, 150, 150, 0.5);
-    margin-bottom: 2rem;
-    margin-left: 59%;
     width: 12rem;
     height: 3rem;
     display: flex;
@@ -71,7 +69,6 @@
   .all-cart {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
   }
 }
