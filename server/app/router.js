@@ -18,7 +18,11 @@ router.get("/movies/:title", (req, res) => {
   client
     .query("SELECT * FROM movie WHERE title = ?", [wantedTitle])
     .then((movie) => {
-      res.status(200).json(movie[0][0]);
+      if (movie[0].length > 0) {
+        res.status(200).json(movie[0][0]);
+      } else {
+        res.status(404).json({ title: "Movie not found" });
+      }
     })
     .catch((error) => console.error(error));
 });
