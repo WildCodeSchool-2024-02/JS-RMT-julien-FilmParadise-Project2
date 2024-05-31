@@ -1,0 +1,13 @@
+.footer {
+  padding: 20px;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.3);
+  .reseaux-sociaux {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    .logo-reseaux {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
