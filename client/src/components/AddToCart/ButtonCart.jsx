@@ -1,10 +1,13 @@
+import { useCart } from "../../context/MovieContext";
 import "./addToCart.css";
 
-function ButtonCart() {
-  const cart = [];
+function ButtonCart({ movie }) {
+  const { addToCart } = useCart();
+
   const cartClick = () => {
-    cart.push(1);
+    addToCart(movie);
   };
+
   return (
     <button className="button-cart" type="button" onClick={cartClick}>
       Add to cart
