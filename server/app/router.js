@@ -5,12 +5,12 @@ const router = express.Router();
 /* ************************************************************************* */
 // Define Your API Routes Here
 /* ************************************************************************* */
-const movies = require("../database/data");
 const client = require("../database/client");
-
 // Route to get a list of items
 router.get("/movies", (req, res) => {
-  res.status(200).json(movies);
+  client
+    .query("SELECT * FROM movie")
+    .then((movie) => res.status(200).json(movie[0]));
 });
 
 router.get("/movies/:title", (req, res) => {
