@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import axios from "axios";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { MovieProvider } from "./context/MovieContext";
+import { CartProvider } from "./context/MovieContext";
 
 import App from "./App";
 import MovieDetail from "./pages/MovieDetail";
@@ -43,8 +43,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <MovieProvider>
+    <CartProvider>
       <RouterProvider router={router} />
-    </MovieProvider>
+    </CartProvider>
   </React.StrictMode>
 );
