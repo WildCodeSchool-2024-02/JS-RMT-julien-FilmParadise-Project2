@@ -1,7 +1,26 @@
 .cart-details {
   padding: 2rem;
-  background-color: aqua;
+  margin: 2rem;
+  background-color: rgba(150, 150, 150, 0.5);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 3rem;
+  width: 70%;
+
+  .cart-information {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    h3 {
+      font-size: 1.8rem;
+      color: var(--text-color);
+    }
+  }
+}
+.title-cart {
+  padding: 2rem 2rem 0 2rem;
+  font-size: 2rem;
 }
