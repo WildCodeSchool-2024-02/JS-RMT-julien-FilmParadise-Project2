@@ -3,6 +3,7 @@ import "./footer.css";
 import logoFacebook from "../../assets/images/facebook.png";
 import logoTwitter from "../../assets/images/twitter.png";
 import logoInstagram from "../../assets/images/instagram.png";
+import Formulaire from "./Formulaire";
 
 function Footer() {
   return (
@@ -30,6 +31,7 @@ function Footer() {
           <img src={logoInstagram} alt="Instagram" className="logo-reseaux" />
         </Link>
       </div>
+      <Formulaire />
     </footer>
   );
 }
