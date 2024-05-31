@@ -20,10 +20,9 @@
     align-items: end;
     border-radius: var(--main-radius);
     position: relative;
-    background-color: aqua;
     img {
-      width: 16rem;
-      height: 22rem;
+      width: 15rem;
+      height: 18rem;
       border-radius: var(--main-radius);
     }
     p {

@@ -86,7 +86,7 @@ function Cart() {
       {movieTest.map((movie) => (
         <CartDetails movie={movie} key={movie.title} />
       ))}
-      <h2 className="total-price">Total : {totalPrice} €</h2>
+      <h2 className="total-price box">Total : {totalPrice} €</h2>
     </>
   );
 }
