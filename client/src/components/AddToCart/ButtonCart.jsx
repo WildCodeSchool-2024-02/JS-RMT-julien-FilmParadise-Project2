@@ -4,12 +4,12 @@ import "./addToCart.css";
 function ButtonCart({ movie }) {
   const { addToCart } = useCart();
 
-  const cartClick = () => {
-    addToCart(movie);
-  };
-
   return (
-    <button className="button-cart" type="button" onClick={cartClick}>
+    <button
+      className="button-cart"
+      type="button"
+      onClick={() => addToCart(movie)}
+    >
       Add to cart
     </button>
   );
