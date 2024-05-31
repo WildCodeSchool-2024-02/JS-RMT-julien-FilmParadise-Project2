@@ -1,0 +1,7 @@
+.cart-details {
+  padding: 2rem;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

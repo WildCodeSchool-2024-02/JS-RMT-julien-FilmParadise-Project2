@@ -1,9 +1,13 @@
+import CartDetails from "../components/CartDetails/CartDetails";
+import Header from "../components/header/Header";
+
 function Cart() {
   return (
-    <div>
-      <h2>Cart</h2>
-      <p>This is the cart page.</p>
-    </div>
+    <>
+      <Header />
+      <h2>Your cart :</h2>
+      <CartDetails />
+    </>
   );
 }
 
