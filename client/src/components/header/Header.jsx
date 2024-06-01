@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/MovieContext";
 import "./header.css";
 import logo from "../../assets/images/Logo.png";
 
 function Header() {
+  const { cart } = useCart();
   return (
     <header className="header background">
       <section className="logo-section">
@@ -20,8 +22,12 @@ function Header() {
         <Link to="/favorites" className="favorites-button">
           Favoris
         </Link>
-        <Link to="/cart" className="cart-button">
-          Panier
+        <Link
+          to="/cart"
+          className="cart-button"
+          title={`You have ${cart.length} movies in your cart !`}
+        >
+          Cart{` ( ${cart.length} )`}
         </Link>
       </nav>
     </header>

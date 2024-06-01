@@ -47,3 +47,25 @@
     }
   }
 }
+.cart-card {
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border-radius: var(--main-radius);
+    position: relative;
+    img {
+      width: 10rem;
+      height: 13rem;
+      border-radius: var(--main-radius);
+    }
+    p {
+      display: none;
+    }
+  }
+  div:hover {
+    outline: 3px solid var(--main-color);
+    opacity: 0.8;
+    box-shadow: 8px 10px 15px 5px rgba(255, 255, 255, 0.61);
+  }
+}

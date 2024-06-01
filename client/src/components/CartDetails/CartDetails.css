@@ -27,6 +27,11 @@
   }
 }
 
+.empty-cart {
+  margin-top: 5rem;
+  text-align: center;
+}
+
 .title-cart {
   margin: 2rem;
 }

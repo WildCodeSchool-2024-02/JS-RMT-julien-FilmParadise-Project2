@@ -1,10 +1,16 @@
 import { useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
 
+import { useCart } from "../context/MovieContext";
 import Header from "../components/header/Header";
 import MovieCard from "../components/MovieCard/MovieCard";
 
 function AllMovies() {
   const movies = useLoaderData();
+  const { setClassMovieCard } = useCart();
+  useEffect(() => {
+    setClassMovieCard("movie-card box");
+  });
   return (
     <>
       <Header />
