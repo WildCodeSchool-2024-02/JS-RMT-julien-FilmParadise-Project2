@@ -5,7 +5,6 @@ const router = express.Router();
 /* ************************************************************************* */
 // Define Your API Routes Here
 /* ************************************************************************* */
-const movies = require("../database/data");
 const client = require("../database/client");
 // Route to get a list of items
 router.get("/movies", (req, res) => {
@@ -16,13 +15,16 @@ router.get("/movies", (req, res) => {
 
 router.get("/movies/:title", (req, res) => {
   const wantedTitle = req.params.title;
-  const movie = movies.find((element) => element.title === wantedTitle);
-
-  if (movie) {
-    res.status(200).json(movie);
-  } else {
-    res.status(200).json({ title: "Movie not found" });
-  }
+  client
+    .query("SELECT * FROM movie WHERE title = ?", [wantedTitle])
+    .then((movie) => {
+      if (movie[0].length > 0) {
+        res.status(200).json(movie[0][0]);
+      } else {
+        res.status(404).json({ title: "Movie not found" });
+      }
+    })
+    .catch((error) => console.error(error));
 });
 
 // Route to get a specific item by ID
