@@ -44,6 +44,27 @@ const initialState = [
     price: 11,
     year: "2022",
   },
+  {
+    adult: false,
+    backdrop_path:
+      "https://image.tmdb.org/t/p/w500/5hoS3nEkGGXUfmnu39yw1k52JX5.jpg",
+    genre_ids: "Action",
+    id: 960704,
+    original_language: "ja",
+    original_title: "鋼の錬金術師 完結編 最後の錬成",
+    overview:
+      "The Elric brothers’ long and winding journey comes to a close in this epic finale, where they must face off against an unworldly, nationwide threat.",
+    popularity: 3068.271,
+    poster_path:
+      "https://image.tmdb.org/t/p/w500/AeyiuQUUs78bPkz18FY3AzNFF8b.jpg",
+    release_date: "2022-06-24",
+    title: "Fullmetal Alchemist: The Final Alchemy",
+    video: false,
+    vote_average: 6.9,
+    vote_count: 36,
+    price: 8,
+    year: "2022",
+  },
 ];
 
 export function CartProvider({ children }) {
