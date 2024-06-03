@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import SearchBar from "../SearchBar/SearchBar";
 import "./header.css";
 import logo from "../../assets/images/Logo.png";
 
@@ -16,6 +17,7 @@ function Header() {
           <p className="subtitle">Le ciné dans ton canapé !</p>
         </div>
       </section>
+      <SearchBar /> {}
       <nav className="action-buttons">
         <Link to="/favorites" className="favorites-button">
           Favoris

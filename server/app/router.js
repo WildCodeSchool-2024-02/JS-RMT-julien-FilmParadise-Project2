@@ -8,11 +8,25 @@ const router = express.Router();
 const client = require("../database/client");
 // Route to get a list of items
 router.get("/movies", (req, res) => {
+  const searchQuery = req.query.search;
+  let query = "SELECT * FROM movie";
+  const params = [];
+
+  if (searchQuery) {
+    query += " WHERE title LIKE ?";
+    params.push(`%${searchQuery}%`);
+  }
+
   client
-    .query("SELECT * FROM movie")
-    .then((movie) => res.status(200).json(movie[0]));
+    .query(query, params)
+    .then((movies) => res.status(200).json(movies[0]))
+    .catch((error) => {
+      console.error(error);
+      res.status(500).json({ message: "An error occurred while fetching movies" });
+    });
 });
 
+// Route to get a specific movie by title
 router.get("/movies/:title", (req, res) => {
   const wantedTitle = req.params.title;
   client
@@ -25,29 +39,5 @@ router.get("/movies/:title", (req, res) => {
       }
     })
     .catch((error) => console.error(error));
-});
-
-// Route to search for movies by title
-
-/* ************************************************************************* */
-router.get("/search", (req, res) => {
-  const searchQuery = req.query.title;
-  if (!searchQuery) {
-    return res.status(400).json({ message: 'Title query parameter is required' });
-  }
-
-  return client
-    .query("SELECT * FROM movie WHERE title LIKE ?", [`%${searchQuery}%`])
-    .then((movies) => {
-      if (movies[0].length > 0) {
-        res.status(200).json(movies[0]);
-      } else {
-        res.status(404).json({ message: "No movies found matching the search criteria" });
-      }
-    })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).json({ message: 'An error occurred while searching for movies', error });
-    });
 });
 module.exports = router;
