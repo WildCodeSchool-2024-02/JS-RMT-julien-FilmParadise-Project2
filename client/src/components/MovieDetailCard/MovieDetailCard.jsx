@@ -1,5 +1,6 @@
 import Details from "./Details";
 import ButtonCart from "../AddToCart/ButtonCart";
+import AddFavory from "../AddFavory/AddFavory";
 
 import "./MovieDetail.css";
 
@@ -31,6 +32,7 @@ function MovieDetailCard({ movie }) {
               <Details detail={detail} key={detail} />
             ))}
             <ButtonCart movie={movie} />
+            <AddFavory movie={movie} />
           </div>
         </>
       )}
