@@ -6,7 +6,7 @@ import "./MovieDetail.css";
 
 function MovieDetailCard({ movie }) {
   const dataDetails = [
-    `Release Date : ${movie.release_date}`,
+    `Release Date : ${movie.release_date.split("T")[0]}`,
     `Synopsis : ${movie.overview}`,
     `Genre : ${movie.genre_ids}`,
     `Price : ${movie.price}€`,
