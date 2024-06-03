@@ -1,12 +1,14 @@
 .favory-button-detail-movie {
   height: 4rem;
   width: 4rem;
-  background-color: var(--main-color);
+  background-color: transparent;
   border-radius: var(--main-radius);
   border: none;
+  img {
+    width: 70%;
+  }
 }
 .favory-button-detail-movie:hover {
   box-shadow: 0 0 0.5em var(--main-color);
   cursor: pointer;
-  background-color: #aa7f3f;
 }

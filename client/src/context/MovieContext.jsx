@@ -10,6 +10,7 @@ export function CartProvider({ children }) {
       setCart((prev) => [...prev, movie]);
     }
   };
+
   const addToFavory = (movie) => {
     if (!favory.some((item) => item.id === movie.id)) {
       setFavory((prev) => [...prev, movie]);

@@ -31,11 +31,13 @@ function MovieDetailCard({ movie }) {
             {dataDetails.map((detail) => (
               <Details detail={detail} key={detail} />
             ))}
-            <ButtonCart movie={movie} />
-            <AddFavory
-              movie={movie}
-              classButtonFavory="favory-button-detail-movie"
-            />
+            <div className="movie-detail-button">
+              <ButtonCart movie={movie} />
+              <AddFavory
+                movie={movie}
+                classButtonFavory="favory-button-detail-movie"
+              />
+            </div>
           </div>
         </>
       )}
