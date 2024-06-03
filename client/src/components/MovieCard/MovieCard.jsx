@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/MovieContext";
+
 import "./movie-card.css";
 
-function MovieCard({ movie }) {
-  const { classMovieCard } = useCart();
+function MovieCard({ movie, classMovieCard }) {
   return (
     <div className={classMovieCard}>
       <Link to={`/movies/${movie.title}`}>

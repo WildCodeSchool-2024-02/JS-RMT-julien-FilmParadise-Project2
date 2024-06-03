@@ -69,16 +69,14 @@ const initialState = [
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState(initialState);
-  const [classMovieCard, setClassMovieCard] = useState("");
+
   const addToCart = (movie) => {
     if (!cart.some((item) => item.id === movie.id)) {
       setCart((prev) => [...prev, movie]);
     }
   };
   return (
-    <CartContext.Provider
-      value={{ cart, addToCart, classMovieCard, setClassMovieCard }}
-    >
+    <CartContext.Provider value={{ cart, addToCart }}>
       {children}
     </CartContext.Provider>
   );

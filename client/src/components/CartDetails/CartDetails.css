@@ -1,12 +1,12 @@
 .cart-details {
   padding: 2rem;
-  margin: 2rem;
+  margin: 2rem 0;
   background-color: rgba(150, 150, 150, 0.6);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
-  width: 70%;
+  width: 100%;
   .cart-information {
     width: 70%;
     display: grid;
@@ -35,14 +35,10 @@
   text-align: center;
 }
 
-.title-cart {
-  margin: 2rem;
-}
 .adjust-total-css {
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: end;
-  margin-left: 2rem;
   margin-bottom: 2rem;
   .total-price {
     background-color: rgba(150, 150, 150, 0.5);
@@ -53,6 +49,11 @@
     align-items: center;
     font-size: 1.2rem;
   }
+}
+
+.cart {
+  width: 70%;
+  margin: auto;
 }
 
 @media screen and (max-width: 768px) {
