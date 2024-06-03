@@ -27,8 +27,27 @@ router.get("/movies/:title", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-// Route to get a specific item by ID
+// Route to search for movies by title
 
 /* ************************************************************************* */
+router.get("/search", (req, res) => {
+  const searchQuery = req.query.title;
+  if (!searchQuery) {
+    return res.status(400).json({ message: 'Title query parameter is required' });
+  }
 
+  return client
+    .query("SELECT * FROM movie WHERE title LIKE ?", [`%${searchQuery}%`])
+    .then((movies) => {
+      if (movies[0].length > 0) {
+        res.status(200).json(movies[0]);
+      } else {
+        res.status(404).json({ message: "No movies found matching the search criteria" });
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while searching for movies', error });
+    });
+});
 module.exports = router;
