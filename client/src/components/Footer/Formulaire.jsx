@@ -6,7 +6,13 @@ function Formulaire() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (event) => event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setName("");
+    setEmail("");
+    setMessage("");
+    alert("message bien envoyé");
+  };
 
   const handleChange = (event, setState) => {
     const inputValue = event.target.value;
@@ -43,7 +49,7 @@ function Formulaire() {
         value={message}
         onChange={(e) => handleChange(e, setMessage)}
       />
-      <button type="submit">Envoyer</button>
+      <button type="submit">Submit</button>
     </form>
   );
 }
