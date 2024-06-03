@@ -32,7 +32,10 @@ function MovieDetailCard({ movie }) {
               <Details detail={detail} key={detail} />
             ))}
             <ButtonCart movie={movie} />
-            <AddFavory movie={movie} />
+            <AddFavory
+              movie={movie}
+              classButtonFavory="favory-button-detail-movie"
+            />
           </div>
         </>
       )}

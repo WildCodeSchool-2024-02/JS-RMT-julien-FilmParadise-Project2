@@ -1,12 +1,12 @@
 import { useCart } from "../../context/MovieContext";
 import "./addFavory.css";
 
-function AddFavory({ movie }) {
+function AddFavory({ movie, classButtonFavory }) {
   const { addToFavory } = useCart();
   return (
     <button
       type="button"
-      className="favory-button"
+      className={classButtonFavory}
       onClick={() => addToFavory(movie)}
     >
       favory
