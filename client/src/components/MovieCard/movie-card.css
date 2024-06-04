@@ -9,19 +9,20 @@
     text-align: center;
     color: var(--text-color);
   }
-  .movie-card {
-    a {
-      color: black;
-    }
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: end;
-      border-radius: var(--main-radius);
-      position: relative;
-      .img-movie {
-        width: 16rem;
-        height: 22rem;
+}
+.movie-card {
+  a {
+    color: black;
+  }
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border-radius: var(--main-radius);
+    position: relative;
+    .img-movie {
+        width: 15rem;
+        height: 18rem;
         border-radius: var(--main-radius);
       }
       .favory-button-movie-card {
@@ -42,31 +43,49 @@
       }
       .favory-button-movie-card:hover {
         box-shadow: 0 0 0.5em var(--main-color);
-
         cursor: pointer;
       }
-
-      p {
-        display: none;
-        position: absolute;
-        background-color: rgba(255, 255, 255, 1);
-        font-family: var(--title-font);
-        width: 100%;
-        height: 3rem;
-        text-align: center;
-        border-radius: 0 0 8px 8px / 0 0 8px 8px;
-      }
+    p {
+      display: none;
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.9);
+      font-family: var(--title-font);
+      width: 100%;
+      height: 3rem;
+      text-align: center;
+      border-radius: 0 0 8px 8px / 0 0 8px 8px;
     }
-
-    div:hover {
-      outline: 3px solid var(--main-color);
-      opacity: 0.9;
-      box-shadow: 8px 10px 15px 5px rgba(255, 255, 255, 0.61);
-      p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+  }
+  div:hover {
+    outline: 3px solid var(--main-color);
+    opacity: 0.8;
+    box-shadow: 8px 10px 15px 5px rgba(255, 255, 255, 0.61);
+    p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+  }
+}
+.cart-card {
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    border-radius: var(--main-radius);
+    position: relative;
+    img {
+      width: 10rem;
+      height: 13rem;
+      border-radius: var(--main-radius);
+    }
+    p {
+      display: none;
+    }
+  }
+  div:hover {
+    outline: 3px solid var(--main-color);
+    opacity: 0.8;
+    box-shadow: 8px 10px 15px 5px rgba(255, 255, 255, 0.61);
   }
 }
