@@ -3,7 +3,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import "./header.css";
 import logo from "../../assets/images/Logo.png";
 
-function Header() {
+function Header({ query }) {
   return (
     <header className="header background">
       <section className="logo-section">
@@ -18,7 +18,7 @@ function Header() {
         </div>
       </section>
       <div className="search-navigate">
-        <SearchBar /> {}
+        <SearchBar query={query} />
         <nav className="action-buttons">
           <Link to="/favorites" className="favorites-button">
             Favoris

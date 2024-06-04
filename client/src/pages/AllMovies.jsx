@@ -1,45 +1,35 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 
 import Header from "../components/header/Header";
 import MovieCard from "../components/MovieCard/MovieCard";
 
 function AllMovies() {
-  const initialMovies = useLoaderData();
-  const [movies, setMovies] = useState(initialMovies);
+  const [movies, setMovies] = useState([]);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get("title");
 
   useEffect(() => {
-    if (searchQuery) {
-      axios
-        .get(
-          `${import.meta.env.VITE_API_URL}/api/search?title=${encodeURIComponent(searchQuery)}`
-        )
-        .then((response) => {
-          setMovies(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching movies:", error);
-        });
-    } else {
-      setMovies(initialMovies);
-    }
-  }, [searchQuery, initialMovies]);
-   return (
+    const url = searchQuery ? `?title=${encodeURIComponent(searchQuery)}` : "";
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/movies${url}`)
+      .then((response) => {
+        setMovies(response.data);
+      })
+      .catch((error) => {
+        setMovies([]);
+        console.error("Error fetching movies:", error);
+      });
+  }, [searchQuery]);
+
+  return (
     <>
-      <Header />
+      <Header query={searchQuery} />
       <section className="movie-list">
-        <h2>All movies :</h2>
-        {movies.length > 0 ? (
-          movies.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
-          ))
-        ) : (
-          <p>No movies found</p>
-        )}
+        <h2>{movies.length > 0 ? "All movies" : "No Movies Found"}</h2>
+        {movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </section>
     </>
   );

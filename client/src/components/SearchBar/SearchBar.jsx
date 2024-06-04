@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function SearchBar() {
-  const [searchQuery, setSearchQuery] = useState("");
+function SearchBar({ query }) {
+  const [searchQuery, setSearchQuery] = useState(query);
   const navigate = useNavigate();
 
   const handleSearchSubmit = (e) => {
