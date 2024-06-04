@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
+
 import axios from "axios";
 
 function FilterMovies({ selectedGenre, handleGenreChange }) {
-  // Dans le return mettre en place un label avec un select et option basé sur le tableau categories
-
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
