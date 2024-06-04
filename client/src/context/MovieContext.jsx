@@ -11,7 +11,7 @@ export function CartProvider({ children }) {
     }
   };
 
-  const addToFavory = (movie) => {
+  const handleFavory = (movie) => {
     if (!favory.some((item) => item.id === movie.id)) {
       setFavory((prev) => [...prev, movie]);
     } else {
@@ -19,7 +19,7 @@ export function CartProvider({ children }) {
     }
   };
   return (
-    <CartContext.Provider value={{ cart, addToCart, favory, addToFavory }}>
+    <CartContext.Provider value={{ cart, addToCart, favory, handleFavory }}>
       {children}
     </CartContext.Provider>
   );

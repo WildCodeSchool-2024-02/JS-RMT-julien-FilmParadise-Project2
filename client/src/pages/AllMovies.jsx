@@ -12,11 +12,7 @@ function AllMovies() {
       <section className="movie-list">
         <h2>All movies :</h2>
         {movies.map((movie) => (
-          <MovieCard
-            key={movie.id}
-            movie={movie}
-            classMovieCard="movie-card box"
-          />
+          <MovieCard key={movie.id} movie={movie} classMovieCard="movie-card" />
         ))}
       </section>
     </>
