@@ -20,7 +20,11 @@ function CartDetails({ movie }) {
         type="button"
         onClick={() => deleteToCart(movie)}
       >
-        <img className="trash" src={trash} alt="Remove from cart." />
+        <img
+          className="trash"
+          src={trash}
+          alt={`Remove ${movie.title} from cart.`}
+        />
       </button>
     </article>
   );
