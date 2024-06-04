@@ -29,7 +29,7 @@ router.get("/movies/:title", (req, res) => {
 
 router.get("/genres", (req, res) => {
   client
-    .query("SELECT DISTINCT genre_ids * FROM movie")
+    .query("SELECT DISTINCT genre_ids FROM movie")
     .then((genres) =>
       res.status(200).json(genres[0].map((movie) => movie.genre_ids))
     );
