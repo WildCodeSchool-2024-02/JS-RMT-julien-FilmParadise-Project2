@@ -1,57 +1,50 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./footer.css";
 
 function Formulaire() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const form = useRef();
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setName("");
-    setEmail("");
-    setMessage("");
-    alert("message bien envoyé");
-  };
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const handleChange = (event, setState) => {
-    const inputValue = event.target.value;
-    if (inputValue.length > 0) {
-      setState(inputValue);
-    } else {
-      setState("");
-    }
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
+      )
+      .then((result) => {
+        if (result.status === 200) {
+          setSuccess((s) => !s);
+          form.current.reset();
+          setError(false);
+        } else {
+          setError(true);
+        }
+      })
+      .catch(() => {
+        setError(true);
+      });
   };
 
   return (
-    <form className="formulaire" onSubmit={handleSubmit}>
-      <label htmlFor="name">Name :</label>
-      <input
-        id="name"
-        name="name"
-        type="text"
-        value={name}
-        onChange={(e) => handleChange(e, setName)}
-      />
-      <label htmlFor="email">Email :</label>
-      <input
-        id="email"
-        name="email"
-        type="text"
-        value={email}
-        onChange={(e) => handleChange(e, setEmail)}
-      />
-      <label htmlFor="email">Message :</label>
-      <input
-        id="message"
-        name="message"
-        type="text"
-        value={message}
-        onChange={(e) => handleChange(e, setMessage)}
-      />
+    <form ref={form} onSubmit={sendEmail} className="formulaire">
+      <label htmlFor="name">Name</label>
+      <input type="text" name="user_name" required />
+      <label htmlFor="email">Email</label>
+      <input type="email" name="user_email" required />
+      <label htmlFor="message">Message</label>
+      <textarea name="message" required />
       <button type="submit">Submit</button>
+      {success && <p>Votre e-mail à bien été envoyé</p>}
+      {error && <p>Erreur lors de l'envoi de votre e-mail</p>}
     </form>
   );
 }
-
 export default Formulaire;
