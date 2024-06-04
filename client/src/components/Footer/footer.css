@@ -9,6 +9,7 @@
     display: flex;
     justify-content: flex-start;
     gap: 20px;
+    margin-left: 30px;
     .logo-reseaux {
       width: 40px;
       height: 40px;
@@ -17,28 +18,51 @@
 }
 
 .formulaire {
-  max-width: 300px;
-  margin-left: auto;
+  max-width: 400px;
+  /* margin-left: auto; */
   display: flex;
   flex-direction: column;
+  margin-right: 30px;
 }
 
 .formulaire label {
   color: var(--text-color);
   font-family: var(--text-font);
-  text-align: center;
-  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
 }
+
 .formulaire input {
   background-color: white;
   border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.formulaire textarea {
+  background-color: white;
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px;
 }
 
 .formulaire button {
   background-color: var(--main-color);
   font-family: var(--text-font);
+  color: white;
   padding: 5px 10px;
   border-radius: 4px;
+  width: 100%;
+}
+.formulaire button:hover {
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+  border-color: yellow;
+  box-shadow: 0 0 2px yellow;
 }
 
 .formulaire p {

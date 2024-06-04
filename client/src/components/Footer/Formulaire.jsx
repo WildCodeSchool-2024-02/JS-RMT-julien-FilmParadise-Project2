@@ -23,14 +23,14 @@ function Formulaire() {
           setMessage({ msg: "Votre e-mail à bien été envoyé", success: true });
         } else {
           setMessage({
-            msg: "Erreur lors de l'envoi de votre e-mail",
+            msg: "Your message has been sent!",
             success: false,
           });
         }
       })
       .catch(() => {
         setMessage({
-          msg: "Erreur lors de l'envoi de votre e-mail",
+          msg: "Your message could not be sent",
           success: false,
         });
       })
@@ -38,7 +38,7 @@ function Formulaire() {
         form.current.reset();
         setTimeout(() => {
           setMessage({ msg: null, success: true });
-        }, 3000);
+        }, 6000);
       });
   };
 
