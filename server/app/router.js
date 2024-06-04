@@ -27,7 +27,7 @@ router.get("/movies/:title", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-router.get("/categories", (req, res) => {
+router.get("/genres", (req, res) => {
   client
     .query("SELECT DISTINCT genre_ids * FROM movie")
     .then((genres) =>
