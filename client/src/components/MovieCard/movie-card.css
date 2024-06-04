@@ -27,12 +27,6 @@
       .favory-button-movie-card {
         border: 1.5px solid var(--main-color);
         border-radius: var(--main-radius);
-        /* background: linear-gradient(
-          127deg,
-          #9523f2,
-          rgb(91, 119, 221),
-          #3d1d8e 70.71%
-        ); */
         display: flex;
         align-items: center;
         justify-content: center;
