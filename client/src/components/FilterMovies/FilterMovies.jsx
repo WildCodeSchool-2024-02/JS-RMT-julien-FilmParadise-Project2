@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function FilterMovies({ selectedGenre, handleGenreChange }) {
   // Dans le return mettre en place un label avec un select et option basé sur le tableau categories
@@ -6,9 +7,9 @@ function FilterMovies({ selectedGenre, handleGenreChange }) {
   const [genres, setGenres] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3310/api/genres")
-      .then((response) => response.json())
-      .then((data) => setGenres(data))
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/genres`)
+      .then((res) => setGenres(res.data))
       .catch((error) => console.error("Error fetching genres:", error));
   }, []);
 
