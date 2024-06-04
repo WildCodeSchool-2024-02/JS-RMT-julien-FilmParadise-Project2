@@ -31,10 +31,11 @@
   button {
     width: 4rem;
     height: 3rem;
-    border: 1px solid var(--main-color);
+    outline: 2px solid var(--main-color);
     border-radius: var(--main-radius);
     .trash {
-      width: 70%;
+      height: 70%;
+      width: 60%;
     }
   }
   button:hover {
