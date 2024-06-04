@@ -4,8 +4,7 @@ import "./footer.css";
 
 function Formulaire() {
   const form = useRef();
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+  const [message, setMessage] = useState({ msg: null, success: true });
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -21,32 +20,47 @@ function Formulaire() {
       )
       .then((result) => {
         if (result.status === 200) {
-          setSuccess((s) => !s);
-          form.current.reset();
-          setError(false);
+          setMessage({ msg: "Votre e-mail à bien été envoyé", success: true });
         } else {
-          setError(true);
+          setMessage({
+            msg: "Erreur lors de l'envoi de votre e-mail",
+            success: false,
+          });
         }
       })
       .catch(() => {
-        setError(true);
+        setMessage({
+          msg: "Erreur lors de l'envoi de votre e-mail",
+          success: false,
+        });
+      })
+      .finally(() => {
+        form.current.reset();
+        setTimeout(() => {
+          setMessage({ msg: null, success: true });
+        }, 3000);
       });
   };
 
   return (
     <form ref={form} onSubmit={sendEmail} className="formulaire">
-      <label htmlFor="name">Name</label>
-      <input type="text" name="user_name" required />
-      <label htmlFor="email">Email</label>
-      <input type="email" name="user_email" required />
-      <label htmlFor="message">Message</label>
-      <textarea name="message" required />
+      <label>
+        Name
+        <input type="text" name="user_name" required />
+      </label>
+      <label>
+        Email
+        <input type="text" name="user_email" required />
+      </label>
+      <label>
+        Message
+        <textarea name="message" required />
+      </label>
       <button type="submit">Submit</button>
-      {success && (
-        <p className="send-success">Votre e-mail à bien été envoyé</p>
-      )}
-      {error && (
-        <p className="send-error">Erreur lors de l'envoi de votre e-mail</p>
+      {message.msg && (
+        <p className={message.success ? "send-success" : "send-error"}>
+          {message.msg}
+        </p>
       )}
     </form>
   );

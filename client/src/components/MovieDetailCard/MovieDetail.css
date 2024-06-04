@@ -25,7 +25,6 @@
     font-family: var(--text-font, sans-serif);
     text-align: center;
     .movie-detail-subcard {
-      /* border: 1px solid white; */
       border-radius: var(--main-radius);
       box-shadow: 0px 1px 7px var(--main-color);
       background-color: #444;
