@@ -21,30 +21,30 @@
     border-radius: var(--main-radius);
     position: relative;
     .img-movie {
-        width: 15rem;
-        height: 18rem;
-        border-radius: var(--main-radius);
+      width: 15rem;
+      height: 18rem;
+      border-radius: var(--main-radius);
+    }
+    .favory-button-movie-card {
+      border: 1.5px solid var(--main-color);
+      border-radius: var(--main-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      img {
+        width: 70%;
       }
-      .favory-button-movie-card {
-        border: 1.5px solid var(--main-color);
-        border-radius: var(--main-radius);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        width: 2rem;
-        height: 2rem;
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        img {
-          width: 70%;
-        }
-      }
-      .favory-button-movie-card:hover {
-        box-shadow: 0 0 0.5em var(--main-color);
-        cursor: pointer;
-      }
+    }
+    .favory-button-movie-card:hover {
+      box-shadow: 0 0 0.5em var(--main-color);
+      cursor: pointer;
+    }
     p {
       display: none;
       position: absolute;
