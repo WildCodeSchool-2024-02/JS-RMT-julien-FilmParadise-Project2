@@ -5,6 +5,13 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [favory, setFavory] = useState([]);
+
+  const deleteToCart = (movie) => {
+    if (cart.some((item) => item.id === movie.id)) {
+      setCart((prev) => prev.filter((item) => item.id !== movie.id));
+    }
+  };
+
   const addToCart = (movie) => {
     if (!cart.some((item) => item.id === movie.id)) {
       setCart((prev) => [...prev, movie]);
@@ -18,8 +25,9 @@ export function CartProvider({ children }) {
       setFavory((prev) => prev.filter((item) => item.id !== movie.id));
     }
   };
+  
   return (
-    <CartContext.Provider value={{ cart, addToCart, favory, handleFavory }}>
+    <CartContext.Provider value={{ cart, addToCart, favory, handleFavory, deleteToCart }}>
       {children}
     </CartContext.Provider>
   );

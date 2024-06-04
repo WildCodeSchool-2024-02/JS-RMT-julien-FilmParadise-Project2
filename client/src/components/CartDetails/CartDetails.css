@@ -28,6 +28,20 @@
       text-align: center;
     }
   }
+  button {
+    width: 4rem;
+    height: 3rem;
+    outline: 2px solid var(--main-color);
+    border-radius: var(--main-radius);
+    .trash {
+      height: 70%;
+      width: 60%;
+    }
+  }
+  button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.5em var(--main-color);
+  }
 }
 
 .empty-cart {
