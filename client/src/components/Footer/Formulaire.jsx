@@ -42,8 +42,12 @@ function Formulaire() {
       <label htmlFor="message">Message</label>
       <textarea name="message" required />
       <button type="submit">Submit</button>
-      {success && <p>Votre e-mail à bien été envoyé</p>}
-      {error && <p>Erreur lors de l'envoi de votre e-mail</p>}
+      {success && (
+        <p className="send-success">Votre e-mail à bien été envoyé</p>
+      )}
+      {error && (
+        <p className="send-error">Erreur lors de l'envoi de votre e-mail</p>
+      )}
     </form>
   );
 }
