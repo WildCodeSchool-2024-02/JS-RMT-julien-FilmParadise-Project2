@@ -10,13 +10,13 @@ function AllMovies() {
   const [movies, setMovies] = useState(initialMovies);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const searchQuery = searchParams.get("search");
+  const searchQuery = searchParams.get("title");
 
   useEffect(() => {
     if (searchQuery) {
       axios
         .get(
-          `${import.meta.env.VITE_API_URL}/api/movies?search=${encodeURIComponent(searchQuery)}`
+          `${import.meta.env.VITE_API_URL}/api/search?title=${encodeURIComponent(searchQuery)}`
         )
         .then((response) => {
           setMovies(response.data);
@@ -28,7 +28,7 @@ function AllMovies() {
       setMovies(initialMovies);
     }
   }, [searchQuery, initialMovies]);
-  return (
+   return (
     <>
       <Header />
       <section className="movie-list">

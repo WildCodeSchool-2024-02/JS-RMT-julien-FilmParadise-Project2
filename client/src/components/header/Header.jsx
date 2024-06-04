@@ -17,15 +17,17 @@ function Header() {
           <p className="subtitle">Le ciné dans ton canapé !</p>
         </div>
       </section>
-      <SearchBar /> {}
-      <nav className="action-buttons">
-        <Link to="/favorites" className="favorites-button">
-          Favoris
-        </Link>
-        <Link to="/cart" className="cart-button">
-          Panier
-        </Link>
-      </nav>
+      <div className="search-navigate">
+        <SearchBar /> {}
+        <nav className="action-buttons">
+          <Link to="/favorites" className="favorites-button">
+            Favoris
+          </Link>
+          <Link to="/cart" className="cart-button">
+            Panier
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 }

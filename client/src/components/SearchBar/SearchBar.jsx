@@ -5,14 +5,10 @@ function SearchBar() {
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
-  const handleInputChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      navigate(`/movies?search=${encodeURIComponent(searchQuery.trim())}`);
+      navigate(`/movies?title=${searchQuery}`);
     }
   };
 
@@ -20,9 +16,9 @@ function SearchBar() {
     <form onSubmit={handleSearchSubmit} className="search-bar">
       <input
         type="text"
+        placeholder="Search for a movie..."
         value={searchQuery}
-        onChange={handleInputChange}
-        placeholder="Search movies..."
+        onChange={(e) => setSearchQuery(e.target.value)}
       />
       <button type="submit">Search</button>
     </form>
