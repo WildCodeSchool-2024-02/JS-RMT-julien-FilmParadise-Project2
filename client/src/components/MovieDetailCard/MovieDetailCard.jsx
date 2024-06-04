@@ -1,11 +1,12 @@
 import Details from "./Details";
 import ButtonCart from "../AddToCart/ButtonCart";
+import AddFavory from "../AddFavory/AddFavory";
 
 import "./MovieDetail.css";
 
 function MovieDetailCard({ movie }) {
   const dataDetails = [
-    `Release Date : ${movie.release_date}`,
+    `Release Date : ${movie.release_date.split("T")[0]}`,
     `Synopsis : ${movie.overview}`,
     `Genre : ${movie.genre_ids}`,
     `Price : ${movie.price}€`,
@@ -30,7 +31,13 @@ function MovieDetailCard({ movie }) {
             {dataDetails.map((detail) => (
               <Details detail={detail} key={detail} />
             ))}
-            <ButtonCart movie={movie} />
+            <div className="movie-detail-button">
+              <ButtonCart movie={movie} />
+              <AddFavory
+                movie={movie}
+                classButtonFavory="favory-button-detail-movie"
+              />
+            </div>
           </div>
         </>
       )}
