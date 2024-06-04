@@ -5,7 +5,7 @@ import "./CartDetails.css";
 function CartDetails({ movie }) {
   return (
     <article className="cart-details box">
-      <MovieCard classMovieCard="cart-card box" movie={movie} />
+      <MovieCard classMovieCard="cart-card" movie={movie} />
       <div className="cart-information">
         <h3>{movie.title}</h3>
         <h3 className="cart-price">{movie.price} €</h3>
