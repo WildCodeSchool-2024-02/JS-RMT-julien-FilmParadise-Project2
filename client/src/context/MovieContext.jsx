@@ -6,28 +6,29 @@ export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [favory, setFavory] = useState([]);
 
-  const deleteToCart = (movie) => {
-    if (cart.some((item) => item.id === movie.id)) {
+  const isNotInCart = (movie) => !cart.some((item) => item.id === movie.id);
+  const isNotInfavory = (movie) => !favory.some((item) => item.id === movie.id);
+
+  const handleCart = (movie) => {
+    if (isNotInCart(movie)) {
+      setCart((prev) => [...prev, movie]);
+    } else {
       setCart((prev) => prev.filter((item) => item.id !== movie.id));
     }
   };
 
-  const addToCart = (movie) => {
-    if (!cart.some((item) => item.id === movie.id)) {
-      setCart((prev) => [...prev, movie]);
-    }
-  };
-
   const handleFavory = (movie) => {
-    if (!favory.some((item) => item.id === movie.id)) {
+    if (isNotInfavory(movie)) {
       setFavory((prev) => [...prev, movie]);
     } else {
       setFavory((prev) => prev.filter((item) => item.id !== movie.id));
     }
   };
-  
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, favory, handleFavory, deleteToCart }}>
+    <CartContext.Provider
+      value={{ cart, handleCart, favory, handleFavory, isNotInCart }}
+    >
       {children}
     </CartContext.Provider>
   );
