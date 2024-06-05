@@ -24,12 +24,25 @@ function AllMovies() {
       });
   }, [searchQuery]);
 
-  return (
+  const renderMovies = () => {
+    if (searchQuery) {
+      if (movies.length > 0) {
+        return (
+          <h2>Results for "{searchQuery}" </h2>
+        );
+      } 
+        return <h2>No movies found</h2>;
+    } 
+      return <h2>All movies</h2>;
+  };
+  
+   return (
     <>
       <Header query={searchQuery} />
       <section className="movie-list">
-        <h2>{movies.length > 0 ? "All movies" : "No Movies Found"}</h2>
-        {movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+       {renderMovies ()} 
+            {movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
+          
       </section>
     </>
   );
