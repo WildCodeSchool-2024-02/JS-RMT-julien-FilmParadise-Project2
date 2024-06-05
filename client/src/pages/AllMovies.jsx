@@ -13,17 +13,20 @@ function AllMovies() {
 
   const filteredMovies =
     selectedGenre !== ""
-      ? movies.filter((movie) => movie.genre === selectedGenre)
+      ? movies.filter((movie) => movie.genre_ids === selectedGenre)
       : movies;
 
   return (
     <>
       <Header />
       <section className="movie-list">
-        <h2>All movies :</h2>
+        {selectedGenre === "" ? (
+          <h2>All movies :</h2>
+        ) : (
+          <h2>{selectedGenre} :</h2>
+        )}
         <FilterMovies
           handleGenreChange={handleGenreChange}
-          filteredMovies={filteredMovies}
           selectedGenre={selectedGenre}
         />
         {filteredMovies.map((movie) => (
