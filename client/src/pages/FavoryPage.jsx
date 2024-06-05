@@ -4,11 +4,13 @@ import FavoryDetails from "../components/FavoryDetails/FavoryDetails";
 
 function FavoryPage() {
   return (
-    <>
+    <div className="container">
       <Header />
-      <FavoryDetails />
+      <main>
+        <FavoryDetails />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
