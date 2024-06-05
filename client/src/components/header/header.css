@@ -50,6 +50,13 @@
   gap: 40px;
   padding: 20px;
   a {
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    font-size: 1.3rem;
+    font-weight: 900;
     font-family: var(--text-font);
     padding: 5px 10px;
     border: none;

@@ -4,7 +4,7 @@ import "./header.css";
 import logo from "../../assets/images/Logo.png";
 
 function Header() {
-  const { cart } = useCart();
+  const { cart, favory } = useCart();
   return (
     <header className="header background">
       <section className="logo-section">
@@ -20,7 +20,7 @@ function Header() {
       </section>
       <nav className="action-buttons">
         <Link to="/favorites" className="favorites-button">
-          Favoris
+          {`Wishlist (${favory.length})`}
         </Link>
         <Link
           to="/cart"
