@@ -16,20 +16,16 @@ function SearchBar({ query }) {
 
   return (
     <form className="search-form" onSubmit={handleSearchSubmit}>
-      <div className="search-input-wrapper">
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
-        <button className="search-button" type="submit">
-          <img
-            src= {loupe} alt="Search" className="search-icon"
-          />
-        </button>
-      </div>
+      <input
+        className="search-input"
+        type="text"
+        placeholder="Search..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      <button className="search-button" type="submit">
+        <img src={loupe} alt="Search" className="search-icon" />
+      </button>
     </form>
   );
 }

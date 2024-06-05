@@ -17,18 +17,15 @@ function Header({ query }) {
           <p className="subtitle">Le ciné dans ton canapé !</p>
         </div>
       </section>
-      <div className="search-navigate">
-        <SearchBar query={query} />
-        </div>
-        <nav className="action-buttons">
-          <Link to="/favorites" className="favorites-button">
-            Favoris
-          </Link>
-          <Link to="/cart" className="cart-button">
-            Panier
-          </Link>
-        </nav>
-     
+      <SearchBar query={query} />
+      <nav className="action-buttons">
+        <Link to="/favorites" className="favorites-button">
+          Favoris
+        </Link>
+        <Link to="/cart" className="cart-button">
+          Panier
+        </Link>
+      </nav>
     </header>
   );
 }
