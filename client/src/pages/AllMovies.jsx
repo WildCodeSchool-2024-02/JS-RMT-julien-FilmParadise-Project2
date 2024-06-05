@@ -1,20 +1,48 @@
-import { useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 import Header from "../components/header/Header";
 import MovieCard from "../components/MovieCard/MovieCard";
 import Footer from "../components/Footer/Footer";
 
 function AllMovies() {
-  const movies = useLoaderData();
+  const [movies, setMovies] = useState([]);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const searchQuery = searchParams.get("title");
 
-  return (
+  useEffect(() => {
+    const url = searchQuery ? `?title=${encodeURIComponent(searchQuery)}` : "";
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/movies${url}`)
+      .then((response) => {
+        setMovies(response.data);
+      })
+      .catch((error) => {
+        setMovies([]);
+        console.error("Error fetching movies:", error);
+      });
+  }, [searchQuery]);
+
+  const renderMovies = () => {
+    if (searchQuery) {
+      if (movies.length > 0) {
+        return (
+          <h2>Results for "{searchQuery}" </h2>
+        );
+      } 
+        return <h2>No movies found</h2>;
+    } 
+      return <h2>All movies</h2>;
+  };
+  
+   return (
     <>
-      <Header />
+      <Header query={searchQuery} />
       <section className="movie-list">
-        <h2>All movies :</h2>
-        {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} classMovieCard="movie-card" />
-        ))}
+       {renderMovies ()} 
+            {movies.map((movie) => <MovieCard key={movie.id} movie={movie} classMovieCard="movie-card" />)}
       </section>
       <Footer />
     </>

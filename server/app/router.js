@@ -8,9 +8,21 @@ const router = express.Router();
 const client = require("../database/client");
 // Route to get a list of items
 router.get("/movies", (req, res) => {
-  client
-    .query("SELECT * FROM movie")
-    .then((movie) => res.status(200).json(movie[0]));
+  if (req.query.title) {
+    client
+      .query("SELECT * FROM movie WHERE title LIKE ?", [`%${req.query.title}%`])
+      .then((movies) => {
+        res.status(200).json(movies[0]);
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).json({ message: "An error occurred while searching for movies", error });
+    });
+  } else {
+    client
+      .query("SELECT * FROM movie")
+      .then((movie) => res.status(200).json(movie[0]));
+  }
 });
 
 router.get("/movies/:title", (req, res) => {
@@ -27,8 +39,5 @@ router.get("/movies/:title", (req, res) => {
     .catch((error) => console.error(error));
 });
 
-// Route to get a specific item by ID
-
-/* ************************************************************************* */
 
 module.exports = router;
