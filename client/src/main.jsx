@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import axios from "axios";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CartProvider } from "./context/MovieContext";
+
 import App from "./App";
 import MovieDetail from "./pages/MovieDetail";
 import AllMovies from "./pages/AllMovies";

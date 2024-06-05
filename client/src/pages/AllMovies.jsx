@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Header from "../components/header/Header";
 import MovieCard from "../components/MovieCard/MovieCard";
+import Footer from "../components/Footer/Footer";
 
 function AllMovies() {
   const [movies, setMovies] = useState([]);
@@ -41,9 +42,9 @@ function AllMovies() {
       <Header query={searchQuery} />
       <section className="movie-list">
        {renderMovies ()} 
-            {movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
-          
+            {movies.map((movie) => <MovieCard key={movie.id} movie={movie} classMovieCard="movie-card" />)}
       </section>
+      <Footer />
     </>
   );
 }

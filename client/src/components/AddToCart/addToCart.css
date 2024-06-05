@@ -2,7 +2,7 @@
   background-color: var(--main-color);
   width: 15rem;
   height: 4rem;
-  margin: 1rem;
+
   font-family: var(--text-font);
   font-size: 1.6rem;
   border-radius: var(--main-radius);
@@ -14,4 +14,16 @@
   box-shadow: 0 0 0.5em var(--main-color);
   cursor: pointer;
   background-color: #aa7f3f;
+}
+.already-button-cart {
+  background-color: #40a040;
+  width: 15rem;
+  height: 4rem;
+
+  font-family: var(--text-font);
+  font-size: 1.6rem;
+  border-radius: var(--main-radius);
+  /* font-weight: 600; */
+  color: var(--text-color);
+  border: none;
 }

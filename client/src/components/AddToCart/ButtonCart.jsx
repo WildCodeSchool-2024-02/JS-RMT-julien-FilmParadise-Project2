@@ -2,15 +2,14 @@ import { useCart } from "../../context/MovieContext";
 import "./addToCart.css";
 
 function ButtonCart({ movie }) {
-  const { addToCart } = useCart();
-
+  const { handleCart, isNotInCart } = useCart();
   return (
     <button
-      className="button-cart"
+      className={isNotInCart(movie) ? "button-cart" : "already-button-cart"}
       type="button"
-      onClick={() => addToCart(movie)}
+      onClick={isNotInCart(movie) ? () => handleCart(movie) : null}
     >
-      Add to cart
+      {isNotInCart(movie) ? "Add to cart" : "Already in cart"}
     </button>
   );
 }
