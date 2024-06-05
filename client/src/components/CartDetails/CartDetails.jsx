@@ -5,7 +5,7 @@ import trash from "../../assets/images/trash.png";
 import "./CartDetails.css";
 
 function CartDetails({ movie }) {
-  const { deleteToCart } = useCart();
+  const { handleCart } = useCart();
   return (
     <article className="cart-details box">
       <MovieCard classMovieCard="cart-card" movie={movie} />
@@ -18,7 +18,7 @@ function CartDetails({ movie }) {
         aria-label="delete"
         className="delete-cart-button background"
         type="button"
-        onClick={() => deleteToCart(movie)}
+        onClick={() => handleCart(movie)}
       >
         <img
           className="trash"
