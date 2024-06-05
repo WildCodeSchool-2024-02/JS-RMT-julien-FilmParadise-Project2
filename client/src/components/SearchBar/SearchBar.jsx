@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./SearchBar.css";
+import loupe from "../../assets/images/loupe.png";
 
 function SearchBar({ query }) {
   const [searchQuery, setSearchQuery] = useState(query);
@@ -13,16 +15,23 @@ function SearchBar({ query }) {
   };
 
   return (
-    <form onSubmit={handleSearchSubmit} className="search-bar">
-      <input
-        type="text"
-        placeholder="Search for a movie..."
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-      />
-      <button type="submit">Search</button>
+    <form className="search-form" onSubmit={handleSearchSubmit}>
+      <div className="search-input-wrapper">
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Search..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button className="search-button" type="submit">
+          <img
+            src= {loupe} alt="Search" className="search-icon"
+          />
+        </button>
+      </div>
     </form>
   );
-};
+}
 
 export default SearchBar;

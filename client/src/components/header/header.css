@@ -1,4 +1,7 @@
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: transparent;
   padding: 10px 20px;
   color: var(--text-color);
@@ -44,6 +47,11 @@
     }
   }
 }
+.search-navigate {
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+}
 .action-buttons {
   display: flex;
   justify-content: flex-end;
@@ -67,6 +75,7 @@
     box-shadow: 0 0 10px yellow;
   }
 }
+
 @media (max-width: 420px) {
   .header {
     flex-direction: column;

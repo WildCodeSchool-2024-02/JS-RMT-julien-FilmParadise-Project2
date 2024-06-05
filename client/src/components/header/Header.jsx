@@ -19,6 +19,7 @@ function Header({ query }) {
       </section>
       <div className="search-navigate">
         <SearchBar query={query} />
+        </div>
         <nav className="action-buttons">
           <Link to="/favorites" className="favorites-button">
             Favoris
@@ -27,7 +28,7 @@ function Header({ query }) {
             Panier
           </Link>
         </nav>
-      </div>
+     
     </header>
   );
 }
