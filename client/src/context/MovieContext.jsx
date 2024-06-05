@@ -25,9 +25,11 @@ export function CartProvider({ children }) {
       setFavory((prev) => prev.filter((item) => item.id !== movie.id));
     }
   };
-  
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, favory, handleFavory, deleteToCart }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, favory, handleFavory, deleteToCart }}
+    >
       {children}
     </CartContext.Provider>
   );

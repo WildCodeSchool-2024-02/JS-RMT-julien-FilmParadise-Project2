@@ -1,0 +1,10 @@
+.favory-title {
+  text-align: center;
+}
+.all-favory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem;
+  justify-content: center;
+}
