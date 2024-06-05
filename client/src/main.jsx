@@ -8,6 +8,7 @@ import App from "./App";
 import MovieDetail from "./pages/MovieDetail";
 import AllMovies from "./pages/AllMovies";
 import Cart from "./pages/Cart";
+import FavoryPage from "./pages/FavoryPage";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "/favorites",
+    element: <FavoryPage />,
   },
 ]);
 
