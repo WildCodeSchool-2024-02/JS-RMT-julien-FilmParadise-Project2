@@ -1,5 +1,6 @@
 .favory-title {
   text-align: center;
+  margin-top: 2rem;
 }
 .all-favory {
   display: flex;
@@ -7,4 +8,5 @@
   gap: 2rem;
   margin: 2rem;
   justify-content: center;
+  padding: 2rem;
 }
