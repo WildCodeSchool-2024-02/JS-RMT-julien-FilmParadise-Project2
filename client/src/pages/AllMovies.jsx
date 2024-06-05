@@ -28,24 +28,25 @@ function AllMovies() {
   const renderMovies = () => {
     if (searchQuery) {
       if (movies.length > 0) {
-        return (
-          <h2>Results for "{searchQuery}" </h2>
-        );
-      } 
-        return <h2>No movies found</h2>;
-    } 
-      return <h2>All movies</h2>;
+        return <h2>Results for "{searchQuery}" </h2>;
+      }
+      return <h2>No movies found</h2>;
+    }
+    return <h2>All movies</h2>;
   };
-  
-   return (
-    <>
+
+  return (
+    <div className="container">
       <Header query={searchQuery} />
-      <section className="movie-list">
-       {renderMovies ()} 
-            {movies.map((movie) => <MovieCard key={movie.id} movie={movie} classMovieCard="movie-card" />)}
-      </section>
+
+      <main className="movie-list">
+        {renderMovies()}
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} classMovieCard="movie-card" />
+        ))}
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

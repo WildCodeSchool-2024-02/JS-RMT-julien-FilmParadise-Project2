@@ -8,11 +8,11 @@ function MovieDetail() {
   const movie = useLoaderData();
 
   return (
-    <>
+    <div className="container">
       <Header />
       <MovieDetailCard movie={movie} />;
       <Footer />
-    </>
+    </div>
   );
 }
 
