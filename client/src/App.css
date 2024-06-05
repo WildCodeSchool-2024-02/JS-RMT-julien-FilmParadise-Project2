@@ -19,9 +19,6 @@
   --text-font: "Philosopher-Regular";
   --title-font: "Righteous-Regular";
 }
-body {
-  height: 100%;
-}
 .container {
   display: flex;
   flex-direction: column;
