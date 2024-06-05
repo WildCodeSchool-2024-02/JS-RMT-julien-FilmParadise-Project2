@@ -1,3 +1,25 @@
 .filter-movies {
-  color: var(--main-color);
+  background-color: var(--main-color);
+  height: 3rem;
+  width: 18rem;
+  display: flex;
+  border-radius: var(--main-radius);
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: sticky;
+  top: auto;
+  .scrolling-menu {
+    height: 2rem;
+    width: 10rem;
+    background-color: var(--main-color);
+    border: solid;
+    border-radius: var(--main-radius);
+    outline: none;
+    font-family: var(--text-font);
+    color: var(--text-color);
+    .scrolling-menu-option {
+      background-color: #966722;
+    }
+  }
 }

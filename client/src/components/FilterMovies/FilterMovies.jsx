@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-
 import axios from "axios";
+
+import "./FilterMovies.css";
 
 function FilterMovies({ selectedGenre, handleGenreChange }) {
   const [genres, setGenres] = useState([]);
@@ -13,19 +14,24 @@ function FilterMovies({ selectedGenre, handleGenreChange }) {
   }, []);
 
   return (
-    <div className="filter-movies">
-      <label htmlFor="genre">
-        Select Genre:
-        <select id="genre" value={selectedGenre} onChange={handleGenreChange}>
-          <option value="">All Genres</option>
-          {genres.map((genre) => (
-            <option key={genre} value={genre}>
-              {genre}
-            </option>
-          ))}
-        </select>
-      </label>
-    </div>
+    <label className="filter-movies" htmlFor="genre">
+      {`Category `}
+      <select
+        className="scrolling-menu"
+        id="genre"
+        value={selectedGenre}
+        onChange={handleGenreChange}
+      >
+        <option className="scrolling-menu-option" value="All Movies">
+          All Movies
+        </option>
+        {genres.map((genre) => (
+          <option className="scrolling-menu-option" key={genre} value={genre}>
+            {genre}
+          </option>
+        ))}
+      </select>
+    </label>
   );
 }
 
