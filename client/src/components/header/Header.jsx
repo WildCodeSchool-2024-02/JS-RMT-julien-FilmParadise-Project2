@@ -20,7 +20,7 @@ function Header() {
       </section>
       <nav className="action-buttons">
         <Link to="/favorites" className="favorites-button">
-          {`Wishlist (${favory.length})`}
+          {`Wishlist ( ${favory.length} )`}
         </Link>
         <Link
           to="/cart"
