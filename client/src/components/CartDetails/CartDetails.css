@@ -66,8 +66,99 @@
 }
 
 .cart {
-  width: 70%;
+  width: 90%;
   margin: auto;
+}
+
+.cart-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-summary {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.confirmation-window {
+  flex: 1;
+}
+
+.order-form {
+  background-color: rgba(155, 89, 182, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 18rem;
+  height: 30rem;
+  margin-top: 4rem;
+  margin-left: 1%;
+}
+
+.order-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.order-form input {
+  padding: 0.3rem;
+  border: 1px solid #0a0707;
+  border-radius: 3px;
+  width: 15rem;
+}
+
+.order-form button {
+  padding: 0.75rem;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  width: 15rem;
+}
+
+.order-form button:hover {
+  background-color: darken(var(--main-color), 10%);
+}
+
+.confirmation-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.confirmation-window p {
+  margin: 0 0 10px;
+}
+
+.confirmation-window button {
+  display: block;
+  margin: 0 auto;
+  padding: 0.75rem;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.confirmation-window button:hover {
+  background-color: darken(var(--main-color), 10%);
 }
 
 @media screen and (max-width: 768px) {

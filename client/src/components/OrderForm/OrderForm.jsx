@@ -54,7 +54,7 @@ function OrderForm({ totalPrice }) {
     );
   }
     return (
-        <form className="order-form" onSubmit={handleSubmit}>
+        <form className="order-form box" onSubmit={handleSubmit}>
           <div>
             <label>
               Name:
