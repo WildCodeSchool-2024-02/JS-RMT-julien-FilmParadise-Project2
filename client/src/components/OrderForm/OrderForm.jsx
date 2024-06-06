@@ -47,7 +47,7 @@ function OrderForm({ totalPrice }) {
       return (
         <div className="confirmation-window">
         <p>Thank you {formData.name} {formData.lastname} for your purchase!</p>
-        <p>You'll receive your invoice in a few days by post.</p>
+        <p>Enjoy your movie.</p>
         <p>Total: {totalPrice} €</p>
         <button type="button" onClick={handleClose}>Close</button>
       </div>
