@@ -7,7 +7,8 @@ import "./header.css";
 import logo from "../../assets/images/Logo.png";
 
 function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
-  const { cart } = useCart();
+  const { cart, favory } = useCart();
+
 
   return (
     <header className="header background">
@@ -30,7 +31,7 @@ function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
       />
       <nav className="action-buttons">
         <Link to="/favorites" className="favorites-button">
-          Favoris
+          Wishlist ( {favory.length} )
         </Link>
         <Link
           to="/cart"
