@@ -33,7 +33,7 @@ function Header({ query }) {
           className="nav-button"
           title={`You have ${cart.length} movies in your cart !`}
         >
-          Cart{` ( ${cart.length} )`}
+          Cart ( {cart.length} )
         </Link>
         <Link to="/" className="button-home">
           <img className="img-home" src={home} alt="home" />
