@@ -20,7 +20,7 @@ function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
           <Link to="/movies" className="title">
             Film Paradise
           </Link>
-          <p className="subtitle">Le ciné dans ton canapé !</p>
+          <p className="subtitle">When cinema comes to you!</p>
         </div>
       </section>
       <SearchBar

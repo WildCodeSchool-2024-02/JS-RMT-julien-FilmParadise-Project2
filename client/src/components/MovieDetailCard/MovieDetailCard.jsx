@@ -6,11 +6,11 @@ import "./MovieDetail.css";
 
 function MovieDetailCard({ movie }) {
   const dataDetails = [
-    `Release Date : ${movie.release_date.split("T")[0]}`,
-    `Synopsis : ${movie.overview}`,
-    `Genre : ${movie.genre_ids}`,
-    `Price : ${movie.price}€`,
-    `Notes : ${movie.vote_average}/10 (Nb de votes : ${movie.vote_count} )`,
+    `${movie.release_date.split("T")[0]}`,
+    `${movie.overview}`,
+    `${movie.genre_ids}`,
+    `${movie.price}€`,
+    `${movie.vote_average}/10 ( reviews : ${movie.vote_count} ) `,
   ];
 
   return (
