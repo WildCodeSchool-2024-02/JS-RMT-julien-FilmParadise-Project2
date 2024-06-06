@@ -7,7 +7,6 @@ import "./header.css";
 import logo from "../../assets/images/Logo.png";
 
 function Header({ query }) {
-  
   const { cart } = useCart();
 
   return (
