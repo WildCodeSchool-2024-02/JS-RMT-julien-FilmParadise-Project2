@@ -1,37 +1,72 @@
-import { useLoaderData } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
+
 import Header from "../components/header/Header";
 import MovieCard from "../components/MovieCard/MovieCard";
+import Footer from "../components/Footer/Footer";
 import FilterMovies from "../components/FilterMovies/FilterMovies";
 
 function AllMovies() {
-  const movies = useLoaderData();
-  const [selectedGenre, setSelectedGenre] = useState("All Movies");
-  const handleGenreChange = (event) => {
-    setSelectedGenre(event.target.value);
+  const [movies, setMovies] = useState([]);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const searchQuery = searchParams.get("title");
+  const [query, setSearchQuery] = useState(searchQuery);
+  const selectedGenre = searchParams.get("genre") || "All Movies";
+
+  const seperateFilter = () => {
+    if (searchQuery) {
+      return `?title=${encodeURIComponent(searchQuery)}`;
+    }
+    return "";
   };
+
+  useEffect(() => {
+    const url = seperateFilter();
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/api/movies${url}`)
+      .then((response) => {
+        setMovies(response.data);
+      })
+      .catch((error) => {
+        setMovies([]);
+        console.error("Error fetching movies:", error);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery]);
 
   const filteredMovies =
     selectedGenre !== "All Movies"
       ? movies.filter((movie) => movie.genre_ids === selectedGenre)
       : movies;
 
+  const renderMovies = () => {
+    if (query === "" || !searchQuery) {
+      return <h2>{selectedGenre} :</h2>;
+    }
+    if (searchQuery && movies.length > 0) {
+      return <h2>Résults for "{searchQuery}"</h2>;
+    }
+    if (searchQuery) {
+      return <h2>No movies</h2>;
+    }
+    return null;
+  };
   return (
     <>
-      <Header />
+      <Header searchQuery={query} setSearchQuery={setSearchQuery} />
       <section className="movie-list">
         <div className="title-filter">
-          <h2>{selectedGenre} :</h2>
+          {renderMovies()}
 
-          <FilterMovies
-            handleGenreChange={handleGenreChange}
-            selectedGenre={selectedGenre}
-          />
+          <FilterMovies selectedGenre={selectedGenre} />
         </div>
         {filteredMovies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <MovieCard key={movie.id} movie={movie} classMovieCard="movie-card" />
         ))}
       </section>
+      <Footer />
     </>
   );
 }

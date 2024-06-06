@@ -1,10 +1,21 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import "./FilterMovies.css";
 
-function FilterMovies({ selectedGenre, handleGenreChange }) {
+function FilterMovies({ selectedGenre }) {
   const [genres, setGenres] = useState([]);
+  const navigate = useNavigate();
+
+  const handleGenreChange = (e) => {
+    e.preventDefault();
+    if (e.target.value !== "All Movies") {
+      navigate(`/movies?genre=${e.target.value}`);
+    } else {
+      navigate(`/movies`);
+    }
+  };
 
   useEffect(() => {
     axios

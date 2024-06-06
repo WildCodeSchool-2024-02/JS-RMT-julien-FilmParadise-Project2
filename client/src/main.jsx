@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import axios from "axios";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { CartProvider } from "./context/MovieContext";
+
 import App from "./App";
 import MovieDetail from "./pages/MovieDetail";
 import AllMovies from "./pages/AllMovies";
@@ -15,11 +16,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/movies",
-    element: <AllMovies />,
-    loader: () =>
-      axios
-        .get(`${import.meta.env.VITE_API_URL}/api/movies`)
-        .then((res) => res.data),
+    element: <AllMovies />
   },
 
   {

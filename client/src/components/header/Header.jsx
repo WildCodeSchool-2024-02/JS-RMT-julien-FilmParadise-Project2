@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
+
+import SearchBar from "../SearchBar/SearchBar";
+
+import { useCart } from "../../context/MovieContext";
 import "./header.css";
 import logo from "../../assets/images/Logo.png";
 
-function Header() {
+function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
+  const { cart } = useCart();
+
   return (
     <header className="header background">
       <section className="logo-section">
@@ -16,12 +22,22 @@ function Header() {
           <p className="subtitle">Le ciné dans ton canapé !</p>
         </div>
       </section>
+      <SearchBar
+        query={query}
+        setSelectedGenre={setSelectedGenre}
+        setSearchQuery={setSearchQuery}
+        searchQuery={searchQuery}
+      />
       <nav className="action-buttons">
         <Link to="/favorites" className="favorites-button">
           Favoris
         </Link>
-        <Link to="/cart" className="cart-button">
-          Panier
+        <Link
+          to="/cart"
+          className="cart-button"
+          title={`You have ${cart.length} movies in your cart !`}
+        >
+          Cart{` ( ${cart.length} )`}
         </Link>
       </nav>
     </header>

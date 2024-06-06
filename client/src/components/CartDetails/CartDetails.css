@@ -1,0 +1,108 @@
+.cart-details {
+  padding: 2rem;
+  margin: 2rem 0;
+  background-color: rgba(150, 150, 150, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+  .cart-information {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    .cart-price {
+      width: 5rem;
+      grid-column: 5/6;
+      padding: 1rem;
+    }
+    h3 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      grid-column: 1/4;
+      font-size: 1.3rem;
+      color: var(--text-color);
+      font-family: var(--text-font);
+      text-align: center;
+    }
+  }
+  button {
+    width: 4rem;
+    height: 3rem;
+    outline: 2px solid var(--main-color);
+    border-radius: var(--main-radius);
+    .trash {
+      height: 70%;
+      width: 60%;
+    }
+  }
+  button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0.5em var(--main-color);
+  }
+}
+
+.empty-cart {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.adjust-total-css {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 2rem;
+  .total-price {
+    background-color: rgba(150, 150, 150, 0.5);
+    width: 12rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+  }
+}
+
+.cart {
+  width: 70%;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .cart-details {
+    margin: 2rem 0;
+    flex-direction: column;
+    width: 85%;
+    .cart-information {
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      h3 {
+        grid-column: 1/6;
+      }
+      .cart-price {
+        grid-column: 3/4;
+      }
+    }
+  }
+  .title-cart {
+    text-align: center;
+  }
+  .adjust-total-css {
+    margin-left: 0;
+    width: 100%;
+    .total-price {
+      margin: auto;
+    }
+  }
+  .all-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
