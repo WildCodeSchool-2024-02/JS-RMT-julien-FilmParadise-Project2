@@ -45,15 +45,15 @@ function Formulaire() {
   return (
     <form ref={form} onSubmit={sendEmail} className="formulaire">
       <label>
-        Enter your name
+        Your name
         <input placeholder="name" required />
       </label>
       <label>
-        Enter your email adress
+        Your email adress
         <input placeholder="email" required />
       </label>
       <label>
-        Enter your message
+        Your message
         <textarea placeholder="Message" required />
       </label>
       <button type="submit">Submit</button>
