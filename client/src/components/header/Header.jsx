@@ -5,10 +5,10 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useCart } from "../../context/MovieContext";
 import "./header.css";
 import logo from "../../assets/images/Logo.png";
+import home from "../../assets/images/home.png";
 
 function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
   const { cart, favory } = useCart();
-
 
   return (
     <header className="header background">
@@ -30,15 +30,18 @@ function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
         searchQuery={searchQuery}
       />
       <nav className="action-buttons">
-        <Link to="/favorites" className="favorites-button">
+        <Link to="/favorites" className="nav-button">
           Wishlist ( {favory.length} )
         </Link>
         <Link
           to="/cart"
-          className="cart-button"
+          className="nav-button"
           title={`You have ${cart.length} movies in your cart !`}
         >
-          Cart{` ( ${cart.length} )`}
+          Cart ( {cart.length} )
+        </Link>
+        <Link to="/" className="button-home">
+          <img className="img-home" src={home} alt="home" />
         </Link>
       </nav>
     </header>

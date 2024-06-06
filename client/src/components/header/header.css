@@ -72,6 +72,9 @@
     background-color: var(--main-color);
     color: var(--text-color);
     cursor: pointer;
+    img {
+      width: 2rem;
+    }
   }
   a:hover {
     background-color: var(--main-color);
