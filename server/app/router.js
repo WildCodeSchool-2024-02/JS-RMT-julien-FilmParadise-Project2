@@ -16,8 +16,13 @@ router.get("/movies", (req, res) => {
       })
       .catch((error) => {
         console.error(error);
-        res.status(500).json({ message: "An error occurred while searching for movies", error });
-    });
+        res
+          .status(500)
+          .json({
+            message: "An error occurred while searching for movies",
+            error,
+          });
+      });
   } else {
     client
       .query("SELECT * FROM movie")
@@ -39,5 +44,16 @@ router.get("/movies/:title", (req, res) => {
     .catch((error) => console.error(error));
 });
 
+router.get("/genres", (req, res) => {
+  client
+    .query("SELECT DISTINCT genre_ids FROM movie")
+    .then((genres) =>
+      res.status(200).json(genres[0].map((movie) => movie.genre_ids))
+    );
+});
+
+// Route to get a specific item by ID
+
+/* ************************************************************************* */
 
 module.exports = router;

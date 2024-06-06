@@ -18,6 +18,7 @@ const router = createBrowserRouter([
     path: "/movies",
     element: <AllMovies />
   },
+
   {
     path: "/movies/:title",
     element: <MovieDetail />,
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       return response.data;
     },
   },
+
   {
     path: "/cart",
     element: <Cart />,
