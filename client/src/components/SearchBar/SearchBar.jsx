@@ -1,16 +1,16 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SearchBar.css";
 import loupe from "../../assets/images/loupe.png";
 
-function SearchBar({ query }) {
-  const [searchQuery, setSearchQuery] = useState(query);
+function SearchBar({ setSearchQuery, searchQuery }) {
   const navigate = useNavigate();
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       navigate(`/movies?title=${searchQuery}`);
+    } else {
+      navigate(`/movies`);
     }
   };
 

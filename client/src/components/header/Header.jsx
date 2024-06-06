@@ -6,8 +6,7 @@ import { useCart } from "../../context/MovieContext";
 import "./header.css";
 import logo from "../../assets/images/Logo.png";
 
-function Header({ query }) {
-  
+function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
   const { cart } = useCart();
 
   return (
@@ -23,7 +22,12 @@ function Header({ query }) {
           <p className="subtitle">Le ciné dans ton canapé !</p>
         </div>
       </section>
-      <SearchBar query={query} />
+      <SearchBar
+        query={query}
+        setSelectedGenre={setSelectedGenre}
+        setSearchQuery={setSearchQuery}
+        searchQuery={searchQuery}
+      />
       <nav className="action-buttons">
         <Link to="/favorites" className="favorites-button">
           Favoris
