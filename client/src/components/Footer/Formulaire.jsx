@@ -20,10 +20,10 @@ function Formulaire() {
       )
       .then((result) => {
         if (result.status === 200) {
-          setMessage({ msg: "Votre e-mail à bien été envoyé", success: true });
+          setMessage({ msg: "Your message has been sent!", success: true });
         } else {
           setMessage({
-            msg: "Your message has been sent!",
+            msg: "Your message could not be sent",
             success: false,
           });
         }
@@ -45,16 +45,16 @@ function Formulaire() {
   return (
     <form ref={form} onSubmit={sendEmail} className="formulaire">
       <label>
-        Name
-        <input type="text" name="user_name" required />
+        Enter your name
+        <input placeholder="name" required />
       </label>
       <label>
-        Email
-        <input type="text" name="user_email" required />
+        Enter your email adress
+        <input placeholder="email" required />
       </label>
       <label>
-        Message
-        <textarea name="message" required />
+        Enter your message
+        <textarea placeholder="Message" required />
       </label>
       <button type="submit">Submit</button>
       {message.msg && (
