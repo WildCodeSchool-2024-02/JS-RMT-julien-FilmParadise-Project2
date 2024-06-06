@@ -2,15 +2,16 @@ import { useCart } from "../context/MovieContext";
 
 import CartDetails from "../components/CartDetails/CartDetails";
 import Header from "../components/header/Header";
+import Footer from "../components/Footer/Footer";
 
 function Cart() {
   const { cart } = useCart();
   const totalPrice = cart.reduce((acc, movie) => acc + movie.price, 0);
 
   return (
-    <>
+    <div className="container">
       <Header />
-      <div className="cart">
+      <main className="cart">
         {cart.length === 0 ? (
           <h2 className="empty-cart">There is nothing in your cart !</h2>
         ) : (
@@ -26,8 +27,9 @@ function Cart() {
             </div>
           </>
         )}
-      </div>
-    </>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

@@ -54,9 +54,9 @@ function AllMovies() {
     return null;
   };
   return (
-    <>
+    <div className="container">
       <Header searchQuery={query} setSearchQuery={setSearchQuery} />
-      <section className="movie-list">
+      <main className="movie-list">
         <div className="title-filter">
           {renderMovies()}
 
@@ -65,9 +65,9 @@ function AllMovies() {
         {filteredMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} classMovieCard="movie-card" />
         ))}
-      </section>
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
