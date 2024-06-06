@@ -12,7 +12,6 @@ function AllMovies() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const searchQuery = searchParams.get("title");
-  const [query, setSearchQuery] = useState(searchQuery);
   const selectedGenre = searchParams.get("genre") || "All Movies";
 
   const seperateFilter = () => {
@@ -42,7 +41,7 @@ function AllMovies() {
       : movies;
 
   const renderMovies = () => {
-    if (query === "" || !searchQuery) {
+    if (searchQuery === "" || !searchQuery) {
       return <h2>{selectedGenre} :</h2>;
     }
     if (searchQuery && movies.length > 0) {
@@ -55,7 +54,7 @@ function AllMovies() {
   };
   return (
     <div className="container">
-      <Header searchQuery={query} setSearchQuery={setSearchQuery} />
+      <Header searchQuery={searchQuery} />
       <main className="movie-list">
         <div className="title-filter">
           {renderMovies()}
