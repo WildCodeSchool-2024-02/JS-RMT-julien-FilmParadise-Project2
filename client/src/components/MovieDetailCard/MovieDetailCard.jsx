@@ -16,7 +16,7 @@ function MovieDetailCard({ movie }) {
   return (
     <section className="movie-detail-container">
       {movie.title === "Movie not found" ? (
-        <p>Votre film n'existe pas</p>
+        <p>This movie doesn't exist</p>
       ) : (
         <>
           <img
