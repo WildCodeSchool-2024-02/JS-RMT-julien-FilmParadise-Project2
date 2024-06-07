@@ -6,6 +6,7 @@ import { useCart } from "../../context/MovieContext";
 import "./header.css";
 import logo from "../../assets/images/Logo.png";
 import home from "../../assets/images/home.png";
+import shoppingCart from "../../assets/images/shopping-cart.png";
 
 function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
   const { cart, favory } = useCart();
@@ -20,7 +21,7 @@ function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
           <Link to="/movies" className="title">
             Film Paradise
           </Link>
-          <p className="subtitle">Le ciné dans ton canapé !</p>
+          <p className="subtitle">When cinema comes to you!</p>
         </div>
       </section>
       <SearchBar
@@ -38,7 +39,8 @@ function Header({ query, setSelectedGenre, setSearchQuery, searchQuery }) {
           className="nav-button"
           title={`You have ${cart.length} movies in your cart !`}
         >
-          Cart ( {cart.length} )
+          <img src={shoppingCart} alt="shopping cart" />
+          &nbsp; ( {cart.length} )
         </Link>
         <Link to="/" className="button-home">
           <img className="img-home" src={home} alt="home" />

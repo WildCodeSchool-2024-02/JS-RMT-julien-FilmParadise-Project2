@@ -73,19 +73,35 @@
   margin-top: 10px;
   font-size: 14px;
 }
+.message-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+}
 
 .send-success {
   font-family: var(--text-font);
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 20px 40px;
+  border-radius: 8px;
+  font-size: 18px;
   background-color: #40a040;
+  color: var(--text-color);
 }
 
 .send-error {
   font-family: var(--text-font);
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 20px 40px;
+  border-radius: 8px;
+  font-size: 18px;
   background-color: red;
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {

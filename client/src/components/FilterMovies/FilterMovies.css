@@ -9,6 +9,7 @@
   gap: 3rem;
   position: sticky;
   top: auto;
+  font-family: var(--text-font);
   .scrolling-menu {
     height: 2rem;
     width: 10rem;

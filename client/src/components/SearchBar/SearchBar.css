@@ -4,6 +4,7 @@
   align-items: center;
   width: 20rem;
   .search-input {
+    color: var(--text-color);
     height: 3rem;
     width: 100%;
     padding: 0 45px 0 10px;
