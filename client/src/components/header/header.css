@@ -1,0 +1,119 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 10px 20px;
+  color: var(--text-color);
+  height: 200px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo-section {
+  display: flex;
+  align-items: center;
+  .logo {
+    height: 100px;
+    margin-right: 0px;
+  }
+  .title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .title {
+      margin: 0;
+      font-size: 1.5rem;
+      font-family: "Sacramento", cursive;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 50px;
+      color: #fbf8f8;
+      text-shadow:
+        0 0 5px #9b59b6,
+        0 0 10px #9b59b6,
+        0 0 15px #9b59b6,
+        0 0 20px #8e44ad,
+        0 0 25px #8e44ad,
+        0 0 30px #8e44ad,
+        0 0 35px #8e44ad;
+    }
+    .subtitle {
+      margin-left: 1rem;
+      font-size: 1rem;
+      font-family: "Righteous-Regular";
+      font-style: oblique;
+    }
+  }
+}
+.search-navigate {
+  flex-grow: 2;
+  display: flex;
+  justify-content: center;
+}
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+  padding: 20px;
+  a {
+    width: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    font-size: 1.3rem;
+    font-weight: 900;
+    font-family: var(--text-font);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    cursor: pointer;
+    img {
+      width: 2rem;
+    }
+  }
+  a:hover {
+    background-color: var(--main-color);
+    transition:
+      border-color 0.3s,
+      box-shadow 0.3s;
+    border-color: yellow;
+    box-shadow: 0 0 10px yellow;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+  }
+  .logo-section {
+    flex-direction: column;
+    align-items: center;
+    .logo {
+      height: 7rem;
+      margin-bottom: 10px;
+    }
+    .title-section {
+      display: none;
+      align-items: center;
+    }
+  }
+  .action-buttons {
+    margin-top: 1rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+    padding: 10px 0;
+  }
+}
