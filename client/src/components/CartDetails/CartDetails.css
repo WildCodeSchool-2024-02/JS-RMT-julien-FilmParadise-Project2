@@ -164,6 +164,22 @@
 }
 
 @media screen and (max-width: 768px) {
+  .cart-content {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+  .cart-summary {
+    margin: 0;
+  }
+  .order-form {
+    width: 85%;
+    margin-top: 0.5rem;
+    position: static;
+    top: initial;
+  }
   .cart-details {
     margin: 2rem 0;
     flex-direction: column;

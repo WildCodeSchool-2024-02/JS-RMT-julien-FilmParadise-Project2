@@ -58,9 +58,11 @@ function Formulaire() {
       </label>
       <button type="submit">Submit</button>
       {message.msg && (
-        <p className={message.success ? "send-success" : "send-error"}>
-          {message.msg}
-        </p>
+        <div className="message-container">
+          <p className={message.success ? "send-success" : "send-error"}>
+            {message.msg}
+          </p>
+        </div>
       )}
     </form>
   );
